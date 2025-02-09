@@ -442,7 +442,7 @@ footer {
 .navigationMOB {
     background-color: #1b5f35;
     color: white;
-    padding: 8px 0;
+    padding: 3px 0;
     text-align: center;
     font-weight: 700;
     transition: all 0.3s ease;
@@ -581,7 +581,24 @@ footer {
     
   }
 }
-
+@media (max-width: 360px) {
+  .logo img {
+    width: 330px;
+    
+  }
+}
+@media (max-width: 480px) {
+  .nav-wrapperMOB {
+   display:none;
+    
+  }
+} 
+@media (min-width: 481px) {
+  .nav-wrapperMOBILE {
+   display:none;
+    
+  }
+} 
 @media (max-width: 768px) {
  .social-icons a {
         text-decoration: none;
@@ -621,6 +638,96 @@ footer {
          margin-top: -20px;  
         
     }
+}
+.nav-wrapperMOBILE {
+    
+    z-index: 100;
+}
+
+.navigationMOBILE {
+    background-color: #1b5f35;
+    color: white;
+    padding: 2px 0;
+    text-align: center;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    
+}
+
+.navigationMOBILE.fixedMOBILE {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navigationMOBILE ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    
+    
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+
+
+.navigationMOBILE li {
+    flex-grow: 1;
+    text-align: center;
+   
+}
+
+.navigationMOBILE a {
+  
+    color: white;
+    text-decoration: none;
+   
+    display: block;
+    font-size: 20px;
+    white-space: nowrap;
+    transition: font-size 0.3s ease, padding 0.3s ease; /* Smooth transition */
+   
+}
+
+.navigationMOBILE a:hover {
+    color: white;
+    text-decoration: underline;
+    padding: 5px;
+    display: block;
+   
+    white-space: nowrap;
+}
+
+.navigationMOBILE a.active {
+    text-decoration: underline;
+}
+@media (max-width: 447px) {
+  .navigationMOBILE a {
+    font-size: 19px;
+    padding-left:0px;
+    padding-right:0px;
+  }
+}
+@media (max-width: 409px) {
+  .navigationMOBILE a {
+    font-size: 18px;
+    padding-left:0px;
+    padding-right:0px;
+  }
+}
+@media (max-width: 360px) {
+  .navigationMOBILE a {
+    font-size: 17px;
+    padding-left:0px;
+    padding-right:0px;
+  }
 }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -666,7 +773,7 @@ footer {
         </nav>
     </div>
  <div class="nav-wrapperMOB">
-        <nav class="navigationMOB">
+        <nav class="navigationMOB" style=" padding-top: 8px;">
             <ul class="ulMOB">
                 <li class="liMOB"><a href="#" data-section="home" class="activeMOB">Home</a></li>
                 <li class="liMOB"><a href="#" data-section="news" class="aMOB">News</a></li>
@@ -680,7 +787,7 @@ footer {
         </nav>
     </div>
      <div class="nav-wrapperMOB">
-        <nav class="navigationMOB">
+        <nav class="navigationMOB" style=" padding-bottom: 8px;">
             <ul class="ulMOB">
               
                 <li class="liMOB"><a href="#" data-section="lifestyle" class="aMOB">Lifestyle</a></li>
@@ -692,7 +799,47 @@ footer {
             </ul>
         </nav>
     </div>
-
+<div class="nav-wrapperMOBILE">
+        <nav class="navigationMOBILE" style=" padding-top: 8px;">
+            <ul class="ulMOBILE">
+                <li class="liMOBILE"><a href="#" data-section="home" class="activeMOBILE">Home</a></li>
+                <li class="liMOBILE"><a href="#" data-section="news" class="aMOBILE">News</a></li>
+                <li class="liMOBILE"><a href="#" data-section="features" class="aMOBILE">Features</a></li>
+                <li class="liMOBILE"><a href="#" data-section="views" class="aMOBILE">Views</a></li>
+                 <li class="liMOBILE"><a href="#" data-section="society" class="aMOBILE">Society</a></li>
+           
+            
+              
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-wrapperMOBILE">
+        <nav class="navigationMOBILE">
+            <ul class="ulMOBILE">
+                
+               <li class="liMOBILE"><a href="#" data-section="climate" class="aMOBILE">Climate</a></li>
+                <li class="liMOBILE"><a href="#" data-section="fashion" class="aMOBILE">Fashion</a></li>
+               <li class="liMOBILE"><a href="#" data-section="lifestyle" class="aMOBILE">Lifestyle</a></li>
+                <li class="liMOBILE"><a href="#" data-section="arts" class="aMOBILE">Arts</a></li>
+             
+              
+            </ul>
+        </nav>
+    </div>
+     <div class="nav-wrapperMOBILE">
+        <nav class="navigationMOBILE" style=" padding-bottom: 8px;">
+            <ul class="ulMOBILE">
+              
+               
+               
+                <li class="liMOBILE"><a href="#" data-section="photography" class="aMOBILE">Photos</a></li>
+                <li class="liMOBILE"><a href="#" data-section="music" class="aMOBILE">Music</a></li>
+                <li class="liMOBILE"><a href="#" data-section="science" class="aMOBILE">Science</a></li>
+                <li class="liMOBILE"><a href="#" data-section="sport" class="aMOBILE">Sports</a></li>
+                 <li class="liMOBILE"><a href="#" data-section="sport" class="aMOBILE">Crossword</a></li>
+            </ul>
+        </nav>
+    </div>
     <div class="content-container">
         <div id="home" class="content-section active">
          
