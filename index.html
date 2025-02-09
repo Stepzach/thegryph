@@ -45,79 +45,75 @@
         
     }
 
- /* Navigation Styles */
-        .nav-wrapper {
-            position: relative;
-            z-index: 100;
+
+        /* Navigation Styles */
+        .nav-wrapper { /* Added wrapper for positioning context */
+            position: relative; /* Important for absolute positioning of fixed nav */
+            z-index: 100; /* Ensure nav is above other content when fixed */
         }
+
         .navigation {
             background-color: #1b5f35;
             color: white;
             padding: 8px 0;
             text-align: center;
             font-weight: 700;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease; /* Smooth transition for fixed state */
         }
+
         .navigation.fixed {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow when fixed */
         }
-          @media (min-width: 1224px) {
-        .navigation ul { 
+
+        .navigation ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
             justify-content: space-around;
             align-items: center;
+            width: 100%;
             flex-wrap: nowrap;
-            position: relative;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
+
+        .navigation ul::-webkit-scrollbar {
+            display: none;
         }
+
+
         .navigation li {
-            padding: 0 10px;
-            white-space: nowrap;
+            flex-grow: 1;
+            text-align: center;
+            padding: 0 5px;
         }
+
         .navigation a {
             color: white;
             text-decoration: none;
             padding: 5px;
             display: block;
-            font-size: 18px;
+            font-size: 20px;
+            white-space: nowrap;
         }
-        .navigation a:hover, .navigation a.active {
+        
+         .navigation a:hover {
+            color: white;
             text-decoration: underline;
-        }
-        .dropdown {
-            position: absolute;
-            right: 20px;
-            display: none;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #1b5f35;
-            min-width: 150px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .dropdown-content a {
+            padding: 5px;
             display: block;
-            padding: 8px;
-            text-align: center;
+            font-size: 20px;
+            white-space: nowrap;
         }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        @media (max-width: 615px) {
-            .navigation ul {
-                flex-wrap: wrap;
-            }
+
+        .navigation a.active {
+            text-decoration: underline;
         }
 
         /* Content Styles */
@@ -145,18 +141,7 @@
                 margin-bottom: 10px;
             }
         }
-     @media (max-width: 1225px) {
- .navigation ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            flex-wrap: nowrap;
-            position: relative;
-        }
-        }
+
       .article-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
@@ -446,7 +431,7 @@ footer {
 
     <div class="nav-wrapper">
         <nav class="navigation">
-            <ul id="nav-list">
+            <ul>
                 <li><a href="#" data-section="home" class="active">Home</a></li>
                 <li><a href="#" data-section="news">News</a></li>
                 <li><a href="#" data-section="features">Features</a></li>
@@ -460,10 +445,6 @@ footer {
                 <li><a href="#" data-section="music">Music</a></li>
                 <li><a href="#" data-section="science">Science</a></li>
                 <li><a href="#" data-section="sport">Sport</a></li>
-                <li class="dropdown" id="more-menu" style="display:none;">
-                    <a href="#">More &#9662;</a>
-                    <div class="dropdown-content" id="dropdown-items"></div>
-                </li>
             </ul>
         </nav>
     </div>
@@ -742,49 +723,6 @@ footer {
       weatherDiv.innerHTML = "<p>Error fetching weather data.</p>";
     });
 });
-  const navList = document.getElementById("nav-list");
-        const dropdown = document.getElementById("more-menu");
-        const dropdownContent = document.getElementById("dropdown-items");
-        const originalItems = Array.from(navList.children).slice(0, -1); // All items except "More"
-        let hiddenItems = [];
-
-        function adjustNav() {
-            let availableWidth = navList.clientWidth - dropdown.offsetWidth - 30;
-            let totalItemsWidth = 0;
-            let itemsToRemove = [];
-
-            originalItems.forEach(item => {
-                totalItemsWidth += item.offsetWidth;
-                if (totalItemsWidth > availableWidth) {
-                    itemsToRemove.push(item);
-                }
-            });
-            
-            while (itemsToRemove.length > 0) {
-                let lastItem = itemsToRemove.pop();
-                if (!hiddenItems.includes(lastItem)) {
-                    hiddenItems.unshift(lastItem);
-                    dropdownContent.prepend(lastItem);
-                }
-            }
-            
-            let lastVisibleItem = navList.children[navList.children.length - 2];
-            if (lastVisibleItem && lastVisibleItem.getBoundingClientRect().right >= dropdown.getBoundingClientRect().left) {
-                hiddenItems.unshift(lastVisibleItem);
-                dropdownContent.prepend(lastVisibleItem);
-            }
-            
-            while (hiddenItems.length > 0 && totalItemsWidth < availableWidth) {
-                let firstHiddenItem = hiddenItems.shift();
-                navList.insertBefore(firstHiddenItem, dropdown);
-                totalItemsWidth += firstHiddenItem.offsetWidth;
-            }
-            
-            dropdown.style.display = hiddenItems.length > 0 ? "block" : "none";
-        }
-
-        window.addEventListener("resize", adjustNav);
-        adjustNav();
     </script>
 
 </body>
