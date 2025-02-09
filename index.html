@@ -299,7 +299,7 @@
     
 footer {
   border-top: solid #1b5f35 4px;
-  background-color: #f9f4eb; /* Light gray background */
+  background-color: #f9f4eb; /* Light gray background */ 
   padding: 0px;
   font-size: 0.8em;
 }
@@ -316,7 +316,7 @@ footer {
   padding-left: 20px;
   box-sizing: border-box;
   border-right: solid #1b5f35 2px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   font-size: 21px;
   color: #1b5f35;
 }
@@ -349,12 +349,19 @@ footer {
   }
 
   .weather-column,
-  .about-column,
-  .contact-column { /* Include the new column */
+  .about-column { /* Include the new column */
     width: 100%; /* Full width on smaller screens */
-    padding: 0; /* Remove padding */
+    padding-left: 20px; /* Remove padding */
     margin-bottom: 20px; /* Add some space between the sections */
     border-right: none; /* Remove border on smaller screens */
+    border-bottom: solid 2px; 
+  }
+  .contact-column { /* Include the new column */
+    width: 100%; /* Full width on smaller screens */
+    padding-left: 20px; /* Remove padding */
+    
+    border-right: none; /* Remove border on smaller screens */
+   
   }
 }
 
