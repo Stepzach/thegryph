@@ -152,27 +152,21 @@
         margin: 0 auto;
     }
 
-    .article-item {
-        background-color: none;
-       
-       
-        overflow: hidden;
-        
-        transition: transform 0.3s ease;
-        width: 100%; /* Ensure each article item takes full width of its column */
-    }
+   .article-item {
+    background-color: none;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
 
-
-
-    .article-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        display: block;
-        border-radius:2px;
-       
-         
-    }
+  .article-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+    position: relative; /* Make image the positioning context */
+}
 
 
 
@@ -366,6 +360,36 @@ footer {
    
   }
 }
+.article-labels {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Ensure labels stay within the image bounds */
+    max-width: 90%; /* Adjust as needed to prevent overflow */
+    
+   
+} 
+
+.article-label {
+    background-color: rgba(20, 100, 20);
+    color: white;
+    font-size: 0.8rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-right: 5px; 
+    margin-bottom: 5px;
+    white-space: nowrap;
+   
+    
+}
+
+.image-wrapper {
+  position: relative; /* Positioning context for labels */
+}
+
+
 
 /* Styling for the weather information (adapt as needed) */
 #leeds-weather p {
@@ -434,7 +458,15 @@ footer {
              <div class="article-grid">
                 <!-- Article 1 -->
                 <div class="article-item">
+                <div class="image-wrapper">
                     <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/pexels-kseniachernaya-3965545-768x513.jpg" alt="Article Image" class="article-image">
+                    
+                    <div class="article-labels">
+    <span class="article-label">Label 1</span>
+    <span class="article-label">Label 2</span>
+    <!-- Add more labels as needed -->
+  </div> </div>
+
                     <div class="article-content">
                         <h2 class="article-title">Article Title 1</h2>
                         <p class="article-author-date">By John Doe | January 1, 2024</p>
@@ -445,7 +477,13 @@ footer {
 
                 <!-- Article 2 -->
                 <div class="article-item">
+                    <div class="image-wrapper">
                     <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/AW_VH240125-27-768x512.jpg" alt="Article Image" class="article-image">
+                    <div class="article-labels">
+    <span class="article-label">Label 1</span>
+    <span class="article-label">Label 2</span>
+    <!-- Add more labels as needed -->
+  </div> </div>
                     <div class="article-content">
                         <h2 class="article-title">Article Title 2</h2>
                         <p class="article-author-date">By Jane Smith | January 2, 2024</p>
@@ -456,7 +494,13 @@ footer {
 
                 <!-- Article 3 -->
                 <div class="article-item">
+                    <div class="image-wrapper">
                     <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/Salma-al-Shehab.jpg" alt="Article Image" class="article-image">
+                    <div class="article-labels">
+    <span class="article-label">Label 1</span>
+  
+    <!-- Add more labels as needed -->
+  </div> </div>
                     <div class="article-content">
                         <h2 class="article-title">Article Title 3</h2>
                         <p class="article-author-date">By Peter Jones | January 3, 2024</p>
@@ -467,7 +511,13 @@ footer {
 
                 <!-- Article 4 -->
                 <div class="article-item">
-                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/housing-crisis-article-image-768x336.jpg" alt="Article Image" class="article-image">
+                   <div class="image-wrapper">
+                   <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/housing-crisis-article-image-768x336.jpg" alt="Article Image" class="article-image">
+                    <div class="article-labels">
+    <span class="article-label">Label 1</span>
+    <span class="article-label">Label 2</span>
+    <!-- Add more labels as needed -->
+  </div> </div>
                     <div class="article-content">
                         <h2 class="article-title">Article Title 4</h2>
                         <p class="article-author-date">By John Doe | January 4, 2024</p>
@@ -478,7 +528,13 @@ footer {
 
                 <!-- Article 5 -->
                 <div class="article-item">
-                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/pexels-n-voitkevich-6837624-683x1024.jpg" alt="Article Image" class="article-image">
+                   <div class="image-wrapper">
+                   <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/pexels-n-voitkevich-6837624-683x1024.jpg" alt="Article Image" class="article-image">
+                    <div class="article-labels">
+    <span class="article-label">Label 1</span>
+   
+    <!-- Add more labels as needed -->
+  </div> </div>
                     <div class="article-content">
                         <h2 class="article-title">Article Title 5</h2>
                         <p class="article-author-date">By Jane Smith | January 5, 2024</p>
@@ -489,7 +545,14 @@ footer {
 
                 <!-- Article 6 -->
                 <div class="article-item">
-                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/IMG_5386-768x480.jpeg" alt="Article Image" class="article-image">
+                  <div class="image-wrapper">
+                  <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/IMG_5386-768x480.jpeg" alt="Article Image" class="article-image">
+                    <div class="article-labels">
+    <span class="article-label">Label 1</span>
+    <span class="article-label">Label 2</span>
+    <span class="article-label">Label 3</span>
+    <!-- Add more labels as needed -->
+  </div> </div>
                     <div class="article-content">
                         <h2 class="article-title">Article Title 6</h2>
                         <p class="article-author-date">By Peter Jones | January 6, 2024</p>
@@ -501,6 +564,7 @@ footer {
                 <!-- Article 7 -->
                 <div class="article-item">
                     <img src="placeholder_image.jpg" alt="Article Image" class="article-image">
+                    
                     <div class="article-content">
                         <h2 class="article-title">Article Title 7</h2>
                         <p class="article-author-date">By John Doe | January 7, 2024</p>
