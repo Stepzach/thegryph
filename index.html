@@ -296,6 +296,81 @@
             
         }  
     }
+    
+footer {
+  border-top: solid #1b5f35 4px;
+  background-color: #f9f4eb; /* Light gray background */
+  padding: 0px;
+  font-size: 0.8em;
+}
+
+.containerf {
+  margin: 0 auto;
+  display: flex; /* Enable flexbox layout */
+  flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+}
+
+.weather-column {
+  width: 25%; /* 30% width */
+  padding-right: 20px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-right: solid #1b5f35 2px;
+  padding-bottom: 20px;
+  font-size: 21px;
+  color: #1b5f35;
+}
+
+.about-column {
+  width: 50%; /* 50% width */
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  font-size: 20px;
+  color: #1b5f35;
+  border-right: solid #1b5f35 2px;
+}
+
+.contact-column {  /* NEW COLUMN */
+  width: 25%; /* 20% width */
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  font-size: 21px;
+  color: #1b5f35;
+}
+
+/* Responsive Adjustments (Example) */
+@media (max-width: 768px) {
+  .containerf {
+    flex-direction: column; /* Stack columns on smaller screens */
+  }
+
+  .weather-column,
+  .about-column,
+  .contact-column { /* Include the new column */
+    width: 100%; /* Full width on smaller screens */
+    padding: 0; /* Remove padding */
+    margin-bottom: 20px; /* Add some space between the sections */
+    border-right: none; /* Remove border on smaller screens */
+  }
+}
+
+/* Styling for the weather information (adapt as needed) */
+#leeds-weather p {
+  line-height: 9px;
+  margin-bottom: 0px;
+  color: #1b5f35;
+  font-size: 20px;
+}
+
+
+#leeds-weather h3 {
+  margin-bottom: 0px;
+  color: #1b5f35;
+}
 
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -453,7 +528,27 @@
         <!-- Other content sections remain unchanged -->
 
     </div>
-
+<footer>
+  <div class="containerf">
+    <div class="weather-column">
+      <h3>Weather</h3>
+      <div id="leeds-weather">
+        <!-- Weather data will be dynamically inserted here -->
+        <p>Loading weather data...</p>
+      </div>
+    </div>
+    <div class="about-column">
+      <p>
+        This website is dedicated to providing information about [Your Website's Topic]. We strive to deliver accurate and up-to-date content to our users. 
+      </p>
+    </div>
+    <div class="contact-column">  <!-- NEW COLUMN -->
+      <h3>Contact Us</h3>
+      <p style="font-size:20px; line-height:9px;" >info@example.com</p>
+      <p style="font-size:20px; line-height:9px;">(123) 456-7890</p>
+    </div>
+  </div>
+</footer>
 </div>
     <script>
         const navLinks = document.querySelectorAll('.navigation a');
@@ -509,7 +604,50 @@
     updateDate(); // Initial update
 
     //Optional:  Update date every minute.  Remove if not needed.
-    //setInterval(updateDate, 60000); // Update every minute (60000 milliseconds)
+    setInterval(updateDate, 60000); // Update every minute (60000 milliseconds)
+    
+   document.addEventListener('DOMContentLoaded', function() {
+  const weatherDiv = document.getElementById('leeds-weather');
+
+  // Leeds coordinates (latitude and longitude) - VERY IMPORTANT TO GET THESE RIGHT
+  const latitude = 53.801277;
+  const longitude = -1.548567;
+
+  // Open-Meteo API URL
+  const apiUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,precipitation_probability&daily=sunrise,sunset,temperature_2m_max,temperature_2m_min&timezone=Europe%2FLondon&forecast_days=1`;
+
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data); // Inspect the data in the console
+
+      if (data && data.daily && data.daily.sunrise && data.daily.sunset && data.daily.temperature_2m_max && data.daily.temperature_2m_min) {
+        const highTemp = Math.round(data.daily.temperature_2m_max[0]); // First day's high
+        const lowTemp = Math.round(data.daily.temperature_2m_min[0]);   // First day's low
+        const sunriseTimestamp = data.daily.sunrise[0];  // Sunrise time string
+        const sunsetTimestamp = data.daily.sunset[0];    // Sunset time string
+
+        // Convert sunset time to a readable format
+        const sunsetDate = new Date(sunsetTimestamp); // Sunset date object
+        const sunsetTime = sunsetDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+          const precipitationProbability = data.hourly.precipitation_probability[0]; //First hour of rain chance
+
+        weatherDiv.innerHTML = `
+          <p>High: ${highTemp}°C</p>
+          <p>Low: ${lowTemp}°C</p>
+          <p>Rain: ${precipitationProbability}%</p>
+          <p>Sunset: ${sunsetTime}</p>
+        `;
+      } else {
+        weatherDiv.innerHTML = "<p>Error fetching weather data.</p>";
+      }
+    })
+    .catch(error => {
+      console.error("Error fetching weather:", error);
+      weatherDiv.innerHTML = "<p>Error fetching weather data.</p>";
+    });
+});
     </script>
 
 </body>
