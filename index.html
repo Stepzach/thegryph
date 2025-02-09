@@ -45,76 +45,106 @@
         
     }
 
+.nav-wrapper {
+    position: relative;
+    z-index: 100;
+}
 
-        /* Navigation Styles */
-        .nav-wrapper { /* Added wrapper for positioning context */
-            position: relative; /* Important for absolute positioning of fixed nav */
-            z-index: 100; /* Ensure nav is above other content when fixed */
-        }
+.navigation {
+    background-color: #1b5f35;
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    
+}
 
-        .navigation {
-            background-color: #1b5f35;
-            color: white;
-            padding: 8px 0;
-            text-align: center;
-            font-weight: 700;
-            transition: all 0.3s ease; /* Smooth transition for fixed state */
-        }
+.navigation.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
-        .navigation.fixed {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow when fixed */
-        }
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
-        .navigation ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            width: 100%;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
+.navigation ul::-webkit-scrollbar {
+    display: none;
+}
 
-        .navigation ul::-webkit-scrollbar {
-            display: none;
-        }
+.navigation li {
+    flex-grow: 1;
+    text-align: center;
+   
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    font-size: 20px;
+    white-space: nowrap;
+    transition: font-size 0.3s ease, padding 0.3s ease; /* Smooth transition */
+}
+
+.navigation a:hover {
+    color: white;
+    text-decoration: underline;
+    padding: 5px;
+    display: block;
+   
+    white-space: nowrap;
+}
+
+.navigation a.active {
+    text-decoration: underline;
+}
 
 
-        .navigation li {
-            flex-grow: 1;
-            text-align: center;
-            padding: 0 5px;
-        }
 
-        .navigation a {
-            color: white;
-            text-decoration: none;
-            padding: 5px;
-            display: block;
-            font-size: 20px;
-            white-space: nowrap;
-        }
-        
-         .navigation a:hover {
-            color: white;
-            text-decoration: underline;
-            padding: 5px;
-            display: block;
-            font-size: 20px;
-            white-space: nowrap;
-        }
+/* More gradual scaling with font-size media queries */
 
-        .navigation a.active {
-            text-decoration: underline;
-        }
+@media (max-width: 1200px) {
+  .navigation a {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1050px) {
+  .navigation a {
+    font-size: 17px;
+    padding-left: 0px;
+     padding-right: 0px;
+  }
+}
+@media (max-width: 920px) {
+  .navigation a {
+    font-size: 16px;
+    padding-left: -2px;
+     padding-right: -2px;
+  }
+}
+@media (max-width: 840px) {
+  .navigation a {
+    font-size: 15px;
+    padding-left: -2px;
+     padding-right: -2px;
+  }
+}
 
         /* Content Styles */
         .content-container {
@@ -404,6 +434,130 @@ footer {
   margin-bottom: 0px;
   color: #1b5f35;
 }
+.nav-wrapperMOB {
+    position: relative;
+    z-index: 100;
+}
+
+.navigationMOB {
+    background-color: #1b5f35;
+    color: white;
+    padding: 8px 0;
+    text-align: center;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    
+}
+
+.navigationMOB.fixedMOB {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navigationMOB ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.navigationMOB ul::-webkit-scrollbarMOB {
+    display: none;
+}
+
+.navigationMOB li {
+    flex-grow: 1;
+    text-align: center;
+   
+}
+
+.navigationMOB a {
+   
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    font-size: 20px;
+    white-space: nowrap;
+    transition: font-size 0.3s ease, padding 0.3s ease; /* Smooth transition */
+}
+
+.navigationMOB a:hover {
+    color: white;
+    text-decoration: underline;
+    padding: 5px;
+    display: block;
+   
+    white-space: nowrap;
+}
+
+.navigationMOB a.active {
+    text-decoration: underline;
+}
+
+@media (min-width: 769px) {
+  .nav-wrapperMOB {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .nav-wrapper {
+    display: none;
+  }
+}
+
+/* More gradual scaling with font-size media queries */
+
+@media (max-width: 700px) {
+  .navigationMOB a {
+    font-size: 18px;
+  }
+}
+ 
+@media (max-width: 516px) {
+  .navigationMOB a {
+    font-size: 17px;
+  }
+}
+@media (max-width: 490px) {
+  .navigationMOB a {
+    font-size: 17px;
+    padding-left:0px;
+    padding-right:0px;
+  }
+}
+@media (max-width: 450px) {
+  .navigationMOB a {
+    font-size: 16px;
+    padding-left:0px;
+    padding-right:0px;
+  }
+}
+@media (max-width: 420px) {
+  .navigationMOB a {
+    font-size: 15px;
+    padding-left:0px;
+    padding-right:0px;
+  }
+}
+@media (max-width: 406px) {
+  .navigationMOB a {
+    font-size: 14px;
+    padding-left:0px;
+    padding-right:0px;
+  }
+}
+
 
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -429,7 +583,7 @@ footer {
         </div>
     </div>
 
-    <div class="nav-wrapper">
+  <div class="nav-wrapper">
         <nav class="navigation">
             <ul>
                 <li><a href="#" data-section="home" class="active">Home</a></li>
@@ -445,6 +599,33 @@ footer {
                 <li><a href="#" data-section="music">Music</a></li>
                 <li><a href="#" data-section="science">Science</a></li>
                 <li><a href="#" data-section="sport">Sport</a></li>
+            </ul>
+        </nav>
+    </div>
+ <div class="nav-wrapperMOB">
+        <nav class="navigationMOB">
+            <ul class="ulMOB">
+                <li class="liMOB"><a href="#" data-section="home" class="activeMOB">Home</a></li>
+                <li class="liMOB"><a href="#" data-section="news" class="aMOB">News</a></li>
+                <li class="liMOB"><a href="#" data-section="features" class="aMOB">Features</a></li>
+                <li class="liMOB"><a href="#" data-section="views" class="aMOB">Views</a></li>
+                <li class="liMOB"><a href="#" data-section="society" class="aMOB">Society</a></li>
+                <li class="liMOB"><a href="#" data-section="climate" class="aMOB">Climate</a></li>
+                <li class="liMOB"><a href="#" data-section="fashion" class="aMOB">Fashion</a></li>
+              
+            </ul>
+        </nav>
+    </div>
+     <div class="nav-wrapperMOB">
+        <nav class="navigationMOB">
+            <ul class="ulMOB">
+              
+                <li class="liMOB"><a href="#" data-section="lifestyle" class="aMOB">Lifestyle</a></li>
+                <li class="liMOB"><a href="#" data-section="arts" class="aMOB">Arts</a></li>
+                <li class="liMOB"><a href="#" data-section="photography" class="aMOB">Photography</a></li>
+                <li class="liMOB"><a href="#" data-section="music" class="aMOB">Music</a></li>
+                <li class="liMOB"><a href="#" data-section="science" class="aMOB">Science</a></li>
+                <li class="liMOB"><a href="#" data-section="sport" class="aMOB">Sports</a></li>
             </ul>
         </nav>
     </div>
@@ -661,6 +842,45 @@ footer {
                 }
             });
         });
+        
+        
+        
+        const navLinksMOB = document.querySelectorAll('.navigationMOB a');
+        const contentSectionsMOB = document.querySelectorAll('.content-section');
+        const navigationMOB = document.querySelector('.navigationMOB');
+        const navWrapperMOB = document.querySelector('.nav-wrapperMOB'); // Get the wrapper element
+        let originalOffsetTopMOB = navWrapperMOB.offsetTop; // Get the initial offset top of the wrapper
+
+        function handleScroll() {
+            if (window.pageYOffset >= originalOffsetTopMOB) {
+                navigationMOB.classList.add('fixed');
+                navWrapperMOB.style.height = `${navigationMOB.offsetHeight}px`; // Set wrapper height
+            } else {
+                navigationMOB.classList.remove('fixed');
+                navWrapperMOB.style.height = 'auto'; // Reset wrapper height
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        navLinksMOB.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                navLinksMOB.forEach(link => link.classList.remove('active'));
+                contentSections.forEach(section => section.classList.remove('active'));
+
+                this.classList.add('active');
+
+                const targetSectionId = this.dataset.section;
+
+                const targetSection = document.getElementById(targetSectionId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            });
+        });
+        
         
         function updateDate() {
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
