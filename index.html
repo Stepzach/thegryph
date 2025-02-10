@@ -873,7 +873,7 @@ footer {
                 <li class="liMOBILE"><a href="#" data-section="music" class="aMOBILE">Music</a></li>
                 <li class="liMOBILE"><a href="#" data-section="science" class="aMOBILE">Science</a></li>
                 <li class="liMOBILE"><a href="#" data-section="sport" class="aMOBILE">Sports</a></li>
-                 <li class="liMOBILE"><a href="#" data-section="crossword" class="aMOBILE">Crossword</a></li>
+                 <li class="liMOBILE"><a href="#" data-section="crossword" class="aMOBILE" >Crossword</a></li>
             </ul>
         </nav>
     </div>
@@ -1023,13 +1023,40 @@ footer {
                     </div>
                 </div>
             </div>
-        </div>
-<div id="crosswor" class="content-section" onclick="window.open('https://stepzach.github.io/nyt/', '_blank')">
-    <!-- Your content here -->
+        </div> 
+       </div>
+       
+<div id="crossword" class="content-section">
+
+
+  <style>
+ 
+  .embed-wrapper {
+      
+      width: 100%;
+      height: 700px;
+      overflow: hidden; /* Prevents scrolling inside the iframe */
+       margin-top:-40px;
+  }
+
+  .embed-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      pointer-events: auto; /* Allows clicking inside */
+     
+  }
+</style>
+
+<div class="embed-wrapper">
+    <iframe src="https://stepzach.github.io/nyt/" scrolling="no"></iframe>
+</div>
+
+
 </div>
 
     </div>
-<footer>
+<footer style="margin: 5px; border-radius: 5px; overflow: hidden;">
   <div class="containerf">
     <div class="weather-column">
       <h3>Weather</h3>
