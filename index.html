@@ -822,7 +822,7 @@ footer {
   
     margin: 0px !important; 
     border-radius:0px !important;
-     
+      
   }
 }
 @media (max-width: 480px) {
@@ -840,7 +840,8 @@ footer {
    background-color: #f9f4eb;
      
   }
-}        
+}       
+    
         
         
     </style>
@@ -952,9 +953,232 @@ footer {
                 <li class="liMOBILE"><a href="#" data-section="sport" class="aMOBILE">Sports</a></li>
                  <li class="liMOBILE"><a href="#" data-section="home" class="aMOBILE" onclick="window.open('https://stepzach.github.io/nyt2/', '_self')">Crossword</a></li>
             </ul>
-        </nav>
-    </div>
+        </nav> 
+    </div> 
     <div class="content-container">
+     <style>
+        /* General Styles */
+        .section-containerss {
+       
+            display: flex;
+            height: 500px;
+            width: 100%; /* Make the container take up the full width */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .columnss {
+            box-sizing: border-box; /* Crucial for accurate column sizing with padding/borders */
+            padding: 10px; /* Add some padding around content within each column */
+            
+        } 
+        
+        /* Column 1: Responsive Image */
+        .columnss-1 { 
+            flex: 1; /* Takes up available space (responsive) */
+            display: flex; /* Enables centering image horizontally and vertically */
+            justify-content: center; /* Centers image horizontally */
+           
+             height: 500px;
+             align-items:center;
+             overflow:hidden;
+        }
+
+        .columnss-1 img {
+           width: 100%; /* Image width is responsive */
+            /* Maintain aspect ratio */
+            display: block; /* Removes extra space below the image */
+            object-fit: cover;
+            
+        }
+
+
+         /* Column 2: Two Buttons */
+        .columnss-2 { 
+        height:500px;
+        border-left:solid 2px #1b5f35;
+      border-right:solid 2px #1b5f35;
+            width: 25%; /* Fixed width */
+           max-width:300px;
+            display: flex;
+            justify-content:space-between;
+            flex-direction: column; /* Stack buttons vertically */  
+           
+            
+            align-items:center
+        }
+
+        .columnss-2 button {
+            width: 90%;  /* Button width, adjust as needed, makes it responsive in column */
+             background-color: #1b5f35;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0.5rem;
+    font-size: 1rem;
+            
+        }
+
+        /* Column 3: Fixed-Width Image */
+        .columnss-3 {
+           height: 500px; /* Fixed width */
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            
+        }
+
+        .columnss-3 img {
+           height: 500px; /* Fixed width */
+           
+            display: block; /* Removes extra space below the image */
+        }
+
+        /* Media Query for smaller screens */
+       /* Carousel Styles */
+#carousel {
+    position: relative;
+    overflow: hidden;
+   
+    
+}
+
+.carousel-container {
+  
+    transition: transform 0.5s ease-in-out; /* Smooth animation */
+} 
+
+.carousel-slide {
+   min-width:100%/* Each slide takes full width */
+} 
+
+.carousel-slide img {
+      width: auto;  /* Let the width scale based on height and content */ 
+    height: 500px; /* Fixed height */
+    object-fit: cover !important;  /* Crop to fill */
+    display: block;      /* Remove extra space */
+} 
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #1b5f35;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10; /* Ensure buttons are above the images */
+}
+
+.carousel-button.prev {
+    left: 0.5rem;
+}
+
+.carousel-button.next {
+    right: 0.5rem;
+}
+
+@media (max-width: 970px) {
+  .columnss-3 {
+  
+   display: none !important;
+   width:0;
+     
+  }
+}   
+@media (max-width: 970px) {
+  .columnss-2 {
+   
+   border-right: none !important;
+     
+  }
+}   
+@media (max-width: 768px) {
+  .columnss-2 {
+   
+   display: none !important;
+   width:0;
+     
+  }
+  .columnss-1 {
+   
+   height: 400px;
+     
+  }
+}  
+@media (max-width: 560px) {
+  .columnss-1 {
+   
+   height: 300px;
+     
+  }
+}   
+@media (max-width: 420px) {
+  .columnss-1 {
+   
+   height: 250px;
+   
+     
+  }
+  .columnss {
+   
+  padding:0;
+   
+     
+  }
+  .carousel-button {
+   
+  padding:5px;
+   
+     
+  }
+}   
+    </style> 
+
+<body>
+
+    <div class="section-containerss">
+
+        <div class="columnss columnss-1">
+             <section id="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/AW_VH240125-27-768x512.jpg" alt="Image 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/AW_VH240125-27-768x512.jpg" alt="Image 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/AW_VH240125-27-768x512.jpg" alt="Image 3">
+                </div>
+            </div>
+            <button class="carousel-button prev">❮</button>
+            <button class="carousel-button next">❯</button>
+        </section>
+
+       
+
+        </div>
+
+        <div class="column columnss-2">
+        <div style="width:100%;">
+        <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/Salma-al-Shehab.jpg" width=90% style="margin-left:5%; margin-right:5%;">
+         <p style="width:90%;margin-left:auto; margin-right:auto;">We are a team of 200 students, we rely on example example example example example</p>
+            <button>Our Team</button>
+            </div>
+           <p style="width:90%;">Do you think you have what it takes, join us</p>
+            <button>Join Us</button>
+            
+        </div>
+
+        <div class="columnss columnss-3">
+            <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/01/13539_UoL_SPARK_Web_Banner-1-1.jpg" alt="Fixed Width Image">
+        </div>
+
+    </div>
         <div id="home" class="content-section active">
          
         </div>
