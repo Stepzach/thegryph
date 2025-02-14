@@ -974,22 +974,16 @@ footer {
         
         /* Column 1: Responsive Image */
         .columnss-1 { 
-            flex: 1; /* Takes up available space (responsive) */
-            display: flex; /* Enables centering image horizontally and vertically */
-            justify-content: center; /* Centers image horizontally */
-           
-             height: 500px;
-             align-items:center;
-             overflow:hidden;
-        }
+           flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Center vertically */
+        overflow: hidden; /* Prevents overflow when images are cropped */
+         height: 500px;
+             
+        } 
 
-        .columnss-1 img {
-           width: 100%; /* Image width is responsive */
-            /* Maintain aspect ratio */
-            display: block; /* Removes extra space below the image */
-            object-fit: cover;
-            
-        }
+        
 
 
          /* Column 2: Two Buttons */
@@ -1037,27 +1031,30 @@ footer {
 
         /* Media Query for smaller screens */
        /* Carousel Styles */
-#carousel {
+#carousel { 
     position: relative;
     overflow: hidden;
    
     
 }
-
+ 
 .carousel-container {
-  
-    transition: transform 0.5s ease-in-out; /* Smooth animation */
+   transition: transform 0.5s ease-in-out;
+        display: flex;
+        height: 500px; /* Ensure it fills the container height */
 } 
 
 .carousel-slide {
-   min-width:100%/* Each slide takes full width */
-} 
+   min-width: 100%;
+        height: 100%; /* Ensure it fills the container height */
+}  
 
 .carousel-slide img {
-      width: auto;  /* Let the width scale based on height and content */ 
-    height: 500px; /* Fixed height */
-    object-fit: cover !important;  /* Crop to fill */
-    display: block;      /* Remove extra space */
+ width: 100%; /* Ensure it fills the container width */
+        height: 100%; /* Ensure it fills the container height */
+        object-fit: cover; /* Crucial for covering the entire area */
+        display: block;
+    
 } 
 
 .carousel-button {
@@ -1115,7 +1112,7 @@ footer {
    height: 300px;
      
   }
-}   
+}    
 @media (max-width: 420px) {
   .columnss-1 {
    
@@ -1137,7 +1134,6 @@ footer {
   }
 }   
     </style> 
-
 
   <div id="home" class="content-section active">
     <div class="section-containerss">
