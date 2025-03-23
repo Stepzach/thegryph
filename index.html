@@ -493,82 +493,71 @@
 
     
           <div id="news" class="content-section">
-             <div class="article-grid">
-                <!-- Article 1 -->
-                <div class="article-item">
-                    <div class="image-wrapper">
-                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/Screenshot-2025-02-11-at-15.16.04.png" alt="Article Image" class="article-image">
-                    <div class="article-labels">
-    <span class="article-label">Label 1</span>
-    <span class="article-label">Label 2</span>
-    <!-- Add more labels as needed -->
-  </div> </div>
-                    <div class="article-content">
-                        <h2 class="article-title">Article Title 1</h2>
-                        <p class="article-author-date">By Jane Smith | Febuary 14, 2025</p>
-                        <p class="article-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <a href="#" class="read-more">Read Full Article →</a>
-                    </div>
-                </div>
-<div id="articles-container">
-  <!-- Articles will be dynamically added here -->
+    <div class="article-grid" id="articles-container">
+        <!-- Articles will be dynamically added here -->
+    </div>
 </div>
 
-
 <script>
-
 const getRSSFeed = async () => {
-  const feedUrl = 'https://www.thegryphon.co.uk/feed';
-  const response = await fetch(feedUrl);
-  const xml = await response.text();
+  const feedUrl = 'https://cors-anywhere.herokuapp.com/https://www.thegryphon.co.uk/category/news/feed';
 
-  // Parse the RSS feed XML
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(xml, 'text/xml');
-  const items = xmlDoc.querySelectorAll('item');
+  try {
+    const response = await fetch(feedUrl);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const xml = await response.text();
 
-  // Loop through each item (post) and display it
-  items.forEach(item => {
-    const title = item.querySelector('title').textContent;
-    const link = item.querySelector('link').textContent;
-    const description = item.querySelector('description').textContent;
-    const pubDate = item.querySelector('pubDate').textContent;
-    const author = item.querySelector('dc\\:creator') ? item.querySelector('dc\\:creator').textContent : 'Unknown Author'; // Get author (if available)
-    const imageUrl = item.querySelector('media\\:content') ? item.querySelector('media\\:content').getAttribute('url') : ''; // Get image URL if available
+    // Parse the RSS feed XML
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xml, 'text/xml');
+    const items = xmlDoc.querySelectorAll('item');
 
-    // Create the article item using your structure
-    const articleElement = document.createElement('div');
-    articleElement.classList.add('article-item');
+    const articlesContainer = document.getElementById('articles-container');
 
-    articleElement.innerHTML = `
-      <div class="image-wrapper">
-        <img src="${imageUrl}" alt="Article Image" class="article-image">
-        <div class="article-labels">
-          <span class="article-label">Label 1</span>
-          <span class="article-label">Label 2</span>
-          <!-- You can dynamically add more labels based on categories if you want -->
+    // Loop through each item (post) and display it
+    items.forEach(item => {
+      const title = item.querySelector('title').textContent;
+      const link = item.querySelector('link').textContent;
+      const description = item.querySelector('description').textContent;
+      const pubDate = item.querySelector('pubDate').textContent;
+      const author = item.querySelector('dc\\:creator') ? item.querySelector('dc\\:creator').textContent : 'Unknown Author'; // Get author (if available)
+      const imageUrl = item.querySelector('media\\:content') ? item.querySelector('media\\:content').getAttribute('url') : 'https://via.placeholder.com/300x200'; // Get image URL if available, use placeholder if not
+
+      // Create the article item using your structure
+      const articleElement = document.createElement('div');
+      articleElement.classList.add('article-item');
+
+      articleElement.innerHTML = `
+        <div class="image-wrapper">
+          <img src="${imageUrl}" alt="Article Image" class="article-image">
+          <div class="article-labels">
+            <span class="article-label">Gryphon</span>
+          </div>
         </div>
-      </div>
-      <div class="article-content">
-        <h2 class="article-title"><a href="${link}" target="_blank">${title}</a></h2>
-        <p class="article-author-date">By ${author} | ${new Date(pubDate).toLocaleDateString()}</p>
-        <p class="article-description">${description}</p>
-        <a href="${link}" class="read-more" target="_blank">Read Full Article →</a>
-      </div>
-    `;
+        <div class="article-content">
+          <h2 class="article-title"><a href="${link}" target="_blank">${title}</a></h2>
+          <p class="article-author-date">By ${author} | ${new Date(pubDate).toLocaleDateString()}</p>
+          <p class="article-description">${description}</p>
+          <a href="${link}" class="read-more" target="_blank">Read Full Article →</a>
+        </div>
+      `;
 
-    // Append the article to the container
-    document.querySelector('#articles-container').appendChild(articleElement);
-  });
+      // Append the article to the container
+      articlesContainer.appendChild(articleElement);
+    });
+  } catch (error) {
+    console.error('Error fetching or processing RSS feed:', error);
+    // Optionally display an error message on the page
+    const articlesContainer = document.getElementById('articles-container');
+    articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+  }
 };
 
 // Call the function to fetch and display posts
 getRSSFeed();
-
-
-
 </script>
-
 
                 <!-- Article 2 -->
                 <div class="article-item">
@@ -946,7 +935,7 @@ getRSSFeed();
 
     .article-title {
         font-size: 1.3rem;
-        line-height: 10px;
+        line-height: 1.3em;
         margin-bottom: 2px;
         color: #222;
     }
