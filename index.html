@@ -1679,7 +1679,7 @@
 
         // Categories (remove News, Homepage, University)
         const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
-        const excludedCategories = ["News", "Sport", "sport", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const excludedCategories = ["News", "Sport", "sport", "Sports", "sports",  "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
         const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
 
         // Parse <description> for image
