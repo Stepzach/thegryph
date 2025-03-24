@@ -502,7 +502,7 @@
 <script>
   const getRSSFeed = async () => {
     const timestamp = new Date().getTime();
-    const feedUrl = `https://cors-anywhere.herokuapp.com/https://www.thegryphon.co.uk/category/news/feed?t=${timestamp}`;
+    const feedUrl = `https://www.thegryphon.co.uk/category/news/feed?t=${timestamp}`;
 
     try {
       const response = await fetch(feedUrl);
