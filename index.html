@@ -492,15 +492,78 @@
 
 
     
-          <div id="news" class="content-section">
+         <div id="news" class="content-section">
     <div class="article-grid" id="articles-container">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
-<div id="articles-container"></div>
+<div id="features" class="content-section">
+    <div class="article-grid" id="articles-container1">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+
+<div id="views" class="content-section">
+    <div class="article-grid" id="articles-container2">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+
+        <div id="society" class="content-section">
+    <div class="article-grid" id="articles-container3">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+        <div id="Climate" class="content-section">
+    <div class="article-grid" id="articles-container4">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+
+        <div id="fashion" class="content-section">
+    <div class="article-grid" id="articles-container5">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+
+        <div id="lifestyle" class="content-section">
+    <div class="article-grid" id="articles-container6">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+
+        <div id="arts" class="content-section">
+    <div class="article-grid" id="articles-container7">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+        <div id="photography" class="content-section">
+    <div class="article-grid" id="articles-container8">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+
+        <div id="music" class="content-section">
+    <div class="article-grid" id="articles-container9">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+
+        <div id="science" class="content-section">
+    <div class="article-grid" id="articles-container10">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+
+        <div id="sport" class="content-section">
+    <div class="article-grid" id="articles-container11">
+        <!-- Articles will be dynamically added here -->
+    </div>
+</div>
+        
 <script>
-  const getRSSFeed = async () => {
+  const getRSSFeedNews = async () => { // Renamed function
     const timestamp = new Date().getTime();
     const feedUrl = `https://www.thegryphon.co.uk/category/news/feed?t=${timestamp}`;
 
@@ -515,12 +578,12 @@
       const xmlDoc = parser.parseFromString(xml, 'text/xml');
       const items = xmlDoc.querySelectorAll('item');
 
-      const articlesContainer = document.getElementById('articles-container');
+      const articlesContainer = document.getElementById('articles-container'); // Correctly targeting the news container
 
       const formatDate = (dateString) => {
         const date = new Date(dateString);
         const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
                         'July', 'August', 'September', 'October', 'November', 'December'];
         const day = date.getDate();
         const daySuffix = (d) => {
@@ -580,7 +643,7 @@
             <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
             <p class="article-description">${cleanedDescription}</p>
             <a href="${customLink}" class="read-more">Read Full Article →</a>
-          </div> 
+          </div>
         `;
 
         articlesContainer.appendChild(articleElement);
@@ -593,7 +656,1076 @@
     }
   };
 
-  getRSSFeed();
+  getRSSFeedNews();
+</script>
+
+<script>
+  const getRSSFeedFeatures = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/features/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container1');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/features${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container1');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedFeatures();
+</script>
+
+
+<script>
+  const getRSSFeedViews = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/views/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container2');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/views${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container2');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedViews();
+</script>
+
+        <script>
+  const getRSSFeedSociety = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/society/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container3');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/society${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container3');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedSociety();
+</script>
+
+        <script>
+  const getRSSFeedClimate = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/climate/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container4');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/climate${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container4');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedClimate();
+</script>
+
+<script>
+  const getRSSFeedFashion = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/fashion/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container5');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/fashion${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container5');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedFashion();
+</script>
+
+<script>
+  const getRSSFeedLifestyle = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/lifestyle/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container6');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/lifestyle${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container6');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedLifestyle();
+</script>
+
+<script>
+  const getRSSFeedArts = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/arts/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container7');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/arts${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container7');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedArts();
+</script>
+
+
+<script>
+  const getRSSFeedPhotography = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/photography/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container8');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/photography${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container8');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedPhotography();
+</script>
+
+
+<script>
+  const getRSSFeedMusic = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/music/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container9');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/music${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container9');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedMusic();
+</script>
+
+<script>
+  const getRSSFeedScience = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/science/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container10');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/science${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container10');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedScience();
+</script>
+<script>
+  const getRSSFeedSport = async () => { //Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/sport/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-container11');  // Correct ID for features container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      let articleCounter = 1; // Initialize a counter
+
+      items.forEach(item => {
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+        const customLink = `/sport${articleCounter}`; // Generate the custom link
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+            <div class="article-labels">
+              ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
+            </div>
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+            <a href="${customLink}" class="read-more">Read Full Article →</a>
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+        articleCounter++; // Increment the counter for the next article
+      });
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-container11');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedSport();
 </script>
 
 
