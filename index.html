@@ -602,8 +602,8 @@
 
       items.forEach(item => {
         const title = item.querySelector('title')?.textContent || 'No Title';
-        const originalLink = item.querySelector('link')?.textContent || '#'; // Store the original link
-        const customLink = `/news${articleCounter}`; // Generate the custom link
+        const customLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+       
         const descriptionRaw = item.querySelector('description')?.textContent || '';
         const pubDate = item.querySelector('pubDate')?.textContent || '';
         const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
