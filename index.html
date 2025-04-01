@@ -1,3 +1,4 @@
+<!-- wp:html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,26 +52,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 
-<div class="mainman" style="border-radius:5px; background-color: #fffdf9; overflow: hidden">
+<div class="mainman" style="margin:5px; border-radius:5px; background-color: #fffdf9; overflow: hidden">
     <div class="header">
         <div class="logo"><img src="https://www.thegryphon.co.uk/wp-content/uploads/2016/07/cropped-cropped-GryphonLogo1.png" width="430px" style="mix-blend-mode: multiply;"></div>
 
          <p class="paragraph-950">The Official Newspaper of the University of Leeds since 1897</p>
-        <p class="paragraph-1200">The Official Newspaper of the University of Leeds. Writing inspiring and meaninful stories since 1897</p>
+        <p class="paragraph-1200">The Official Newspaper of the University of Leeds. Writing inspiring and meaningful stories since 1897</p>
         
         <div class="header-right">  <!-- Added container for date and social icons -->
             <div class="current-date" id="current-date"></div> <!-- Placeholder for date -->
-            <div class="social-icons">
-                <a href="#" class="icon" style="color:#1b5f35;" ><i class="fab fa-facebook"></i></a>
-                <a href="#" class="icon" style="color:#1b5f35;" ><i class="fab fa-twitter"></i></a>
-                <a href="#" class="icon" style="color:#1b5f35;" ><i class="fab fa-instagram"></i></a>
-                <a href="#" class="icon" style="color:#1b5f35;" ><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="icon" style="color:#1b5f35;" ><i class="fab fa-tiktok"></i></a>
+            <div class="social-icons">  
+                <a href="https://www.facebook.com/TheGryphonNewspaper/?locale=en_GB" class="icon" style="color:#1b5f35;" ><i class="fab fa-facebook"></i></a>
+                <a href="https://x.com/thegryphonnews" class="icon" style="color:#1b5f35;" ><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/thegryphon/?hl=en" class="icon" style="color:#1b5f35;" ><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/the-gryphon/?originalSubdomain=uk" class="icon" style="color:#1b5f35;" ><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.tiktok.com/@thegryphon_news" class="icon" style="color:#1b5f35;" ><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </div>
 
-  <div class="nav-wrapper"> 
+  <div class="nav-wrapper" style=" z-index: 1 !important;" > 
         <nav class="navigation"> 
             <ul>
                 <li><a href="#" data-section="home" class="active">Home</a></li>
@@ -89,7 +90,7 @@
             </ul>
         </nav>
     </div>
- <div class="nav-wrapperMOB">
+ <div class="nav-wrapperMOB" style="margin-top: 10px; z-index:1" >
         <nav class="navigationMOB" style=" padding-top: 8px;">
             <ul class="ulMOB">
                 <li class="liMOB"><a href="#" data-section="home" class="activeMOB">Home</a></li>
@@ -103,7 +104,7 @@
             </ul>
         </nav>
     </div>
-     <div class="nav-wrapperMOB">
+     <div class="nav-wrapperMOB" style="z-index:1">
         <nav class="navigationMOB" style=" padding-bottom: 8px;">
             <ul class="ulMOB">
               
@@ -116,47 +117,232 @@
             </ul>
         </nav>
     </div>
-<div class="nav-wrapperMOBILE">
-        <nav class="navigationMOBILE" style=" border-bottom: solid #f9f4eb 1.5px;">
-            <ul class="ulMOBILE">
-                <li class="liMOBILE"><a href="#" data-section="home" class="activeMOBILE">Home</a></li>
-                <li class="liMOBILE"><a href="#" data-section="news" class="aMOBILE">News</a></li>
-                <li class="liMOBILE"><a href="#" data-section="features" class="aMOBILE">Features</a></li>
-                <li class="liMOBILE"><a href="#" data-section="views" class="aMOBILE">Views</a></li>
-                 <li class="liMOBILE"><a href="#" data-section="society" class="aMOBILE">Society</a></li>
-           
-            
-              
-            </ul>
-        </nav>
-    </div>
-    <div class="nav-wrapperMOBILE" style="border-bottom: solid #f9f4eb 1.5px;">
-        <nav class="navigationMOBILE">
-            <ul class="ulMOBILE">
+<div class="nav-wrapperMOBILE" style="margin-top: 10px;">
+  <button id="menuButtonMOBILE" class="menu-buttonMOBILE">☰</button>
+
+  <nav id="navigationMOBILE" class="navigationMOBILE closed">
+    <ul class="ulMOBILE">
+      <li class="liMOBILE"><a href="#" data-section="home" class="aMOBILE activeMOBILE">Home</a></li>
+      
+       </ul>
+         <ul class="ulMOBILE">
+      <li class="liMOBILE"><a href="#" data-section="news" class="aMOBILE">News</a></li>
+       </ul>
+         <ul class="ulMOBILE">
+      <li class="liMOBILE"><a href="#" data-section="features" class="aMOBILE">Features</a></li>
+       </ul>
+         <ul class="ulMOBILE">
+      <li class="liMOBILE"><a href="#" data-section="views" class="aMOBILE">Views</a></li>
+       </ul>
+         <ul class="ulMOBILE">
+      <li class="liMOBILE"><a href="#" data-section="society" class="aMOBILE">Society</a></li>
+       </ul>
+         <ul class="ulMOBILE">
+       <li class="liMOBILE"><a href="#" data-section="climate" class="aMOB">Climate</a></li>
+        </ul>
+          <ul class="ulMOBILE">
+                <li class="liMOBILE"><a href="#" data-section="fashion" class="aMOB">Fashion</a></li>
+                 </ul>
+                   <ul class="ulMOBILE">
+                 <li class="liMOBILE"><a href="#" data-section="lifestyle" class="aMOB">Lifestyle</a></li>
+                  </ul>
+                    <ul class="ulMOBILE">
+                <li class="liMOBILE"><a href="#" data-section="arts" class="aMOB">Arts</a></li>
+                 </ul>
+                   <ul class="ulMOBILE">
+                <li class="liMOBILE"><a href="#" data-section="photography" class="aMOB">Photography</a></li>
+                 </ul>
+                   <ul class="ulMOBILE">
+                <li class="liMOBILE"><a href="#" data-section="music" class="aMOB">Music</a></li>
+                 </ul>
+                   <ul class="ulMOBILE">
+                <li class="liMOBILE"><a href="#" data-section="science" class="aMOB">Science</a></li>
+                 </ul>
+                   <ul class="ulMOBILE"  style="
+    padding-bottom: 500px;
+">
+                <li class="liMOBILE"><a href="#" data-section="sport" class="aMOB">Sports</a></li>
                 
-               <li class="liMOBILE"><a href="#" data-section="climate" class="aMOBILE">Climate</a></li>
-                <li class="liMOBILE"><a href="#" data-section="fashion" class="aMOBILE">Fashion</a></li>
-               <li class="liMOBILE"><a href="#" data-section="lifestyle" class="aMOBILE">Lifestyle</a></li>
-                <li class="liMOBILE"><a href="#" data-section="photography" class="aMOBILE">Photography</a></li>
-             
-              
-            </ul>
-        </nav>
-    </div>
-     <div class="nav-wrapperMOBILE">
-        <nav class="navigationMOBILE" style="padding-bottom: 3px;">
-            <ul class="ulMOBILE">
-              
-               
-               
-                <li class="liMOBILE"><a href="#" data-section="arts" class="aMOBILE">Arts</a></li>
-                <li class="liMOBILE"><a href="#" data-section="music" class="aMOBILE">Music</a></li>
-                <li class="liMOBILE"><a href="#" data-section="science" class="aMOBILE">Science</a></li>
-                <li class="liMOBILE"><a href="#" data-section="sport" class="aMOBILE">Sports</a></li>
-                 <li class="liMOBILE"><a href="#" data-section="home" class="aMOBILE" onclick="window.open('https://stepzach.github.io/nyt2/', '_self')">Crossword</a></li>
-            </ul>
-        </nav> 
-    </div> 
+    </ul>
+  </nav>
+</div>
+
+<style>
+
+@media (max-width: 432px) {
+.logo {
+   position:relative;
+    width: 100%;
+    z-index: 10;
+   
+    padding-left:90px;
+    background-color: #f9f4eb;
+     padding-top:30px;
+     top:-28px;
+    
+     
+}
+}
+
+/* Styles for the button */
+.menu-buttonMOBILE {
+  background-color: transparent !important; /* Background color similar to the original border */
+  color: #1b5f35; /* Dark text for readability */
+  border: none;
+  
+  cursor: pointer;
+  font-size: 50px;
+  border-radius: 5px;
+  outline: none !important;  /* Remove the default button outline */
+  position: absolute;
+  right: 10px;
+  top:0px;
+  z-index:100000000000000;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.menu-buttonMOBILE.open {
+position: absolute;
+  background-color: transparent !important;
+  outline: none !important; 
+   font-size: 60px;
+   top:-5px;
+ color: #1b5f35;   /* Set color to desired "X" color */
+ -webkit-tap-highlight-color: rgba(0,0,0,0);
+    z-index:100000000000000;
+}
+
+
+/* Style for the menu when closed */
+.navigationMOBILE.closed {
+   z-index: 100000000;
+  opacity: 0;
+   transform: translateX(100%); /* Move it up off-screen */
+   
+ 
+}
+
+/* Style for the menu when open */
+.navigationMOBILE.open {
+position: absolute;
+height: 100vh;
+   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Adjust duration as needed */
+  transform: translateX(0); /* Start at its normal position */
+  opacity: 1;
+  top:80px;
+  
+  height: auto; /* Let content determine height */
+  overflow: visible; /* Show content */
+  padding: 10px 0; /* Add back padding */
+  border-bottom: solid #f9f4eb 1.5px;
+  z-index:10000000
+}
+
+
+@media (max-width: 481px) {
+
+.navigationMOBILE.open {
+top:151px;
+
+}
+}
+
+@media (max-width: 470px) {
+
+.navigationMOBILE.open {
+top:147px;
+
+}
+}
+@media (max-width: 449px) {
+
+.navigationMOBILE.open {
+top:130px;
+
+}
+}
+
+@media (max-width: 432px) {
+    .navigationMOBILE.open {
+        top: 113px;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+.navigationMOBILE.open {
+top:105px;
+
+}
+}
+
+.ulMOBILE {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.liMOBILE {
+  padding: 10px;
+  text-align: center; /* Center the links */
+}
+
+.liMOBILE a {
+  display: block; /* Make the links fill the list item width */
+  text-decoration: none;
+  color: #1b5f35;
+}
+
+.aMOBILE {
+    color: #000;
+}
+
+.activeMOBILE {
+    color: #007bff;  /* Example active link color */
+    font-weight: bold;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const menuButton = document.getElementById("menuButtonMOBILE");
+  const navigation = document.getElementById("navigationMOBILE");
+  const navLinks = navigation.querySelectorAll("a"); // Select all <a> tags within the navigation
+  const closeButton = navigation.querySelector(".close-nav"); //Assuming you have a close button with the class "close-nav"
+
+  function closeNav() {
+    navigation.classList.remove("open");
+    navigation.classList.add("closed");
+    menuButton.textContent = "☰";
+    menuButton.classList.remove("open");
+  }
+
+
+  menuButton.addEventListener("click", function() {
+    navigation.classList.toggle("closed");
+    navigation.classList.toggle("open");
+
+    if (menuButton.classList.contains("open")) {
+      menuButton.textContent = "☰";  // Change back to menu icon
+    } else {
+      menuButton.textContent = "×"; // Change to multiplication sign (X)
+    }
+    menuButton.classList.toggle("open"); // Toggle the 'open' class
+  });
+
+  // Add click listeners to each nav link
+  navLinks.forEach(link => {
+    link.addEventListener("click", closeNav);
+  });
+
+  // Add click listener to close button (X) if it exists
+  if(closeButton) {
+      closeButton.addEventListener("click", closeNav);
+  }
+
+});
+
+</script>
     
     
     </head>
@@ -168,19 +354,28 @@
  
 
   <div id="home" class="content-section active">
-    <div class="section-containerss">
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="section-containerss" style="    height: auto;
+    margin-bottom: 20px;" >
 
         <div class="columnss columnss-1" >
              <section id="carousel" style="padding-bottom:40px;">
             <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/AW_VH240125-27-768x512.jpg" alt="Image 1">
+                <div class="carousel-slide"> 
+                    <img src="https://leedsunilibrary.wordpress.com/wp-content/uploads/2021/01/lua-pub-002-gry-14_007.jpg?w=1024" alt="Image 1">
                 </div>
                 <div class="carousel-slide">
-                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/pryzm-e1739475081233-768x424.jpg" alt="Image 2">
+                    <img src="https://www.luu.org.uk/wp-content/uploads/2024/01/Gryphon-office-2-scaled.jpg" alt="Image 2">
                 </div>
                 <div class="carousel-slide">
-                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/02/Screenshot-2025-02-11-at-15.16.04.png" alt="Image 3">
+                    <img src="https://www.thegryphon.co.uk/wp-content/uploads/2025/03/9B4034A5-6A9C-4061-BD2E-E345FD1E0DBC-2.jpeg" alt="Image 3">
                 </div>
             </div>
             <button class="carousel-button prev">❮</button>
@@ -194,27 +389,27 @@
         <div class="column columnss-2" style=" border-bottom: solid 2px rgba(192,192,192,0.6);">
         <div style="width:100%;">
          <p style="width:90%;margin-left:auto; margin-right:auto; font-size:23px; font-weight:800; margin-top:0; margin-bottom:5px;  color: black !important;">About Us</p> 
-        <img src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmVzc2lvbmFsJTIwdGVhbXxlbnwwfHwwfHx8MA%3D%3D" width=90% style="margin-left:5%; margin-right:5%;">
+        <img src="https://www.luu.org.uk/wp-content/uploads/2024/12/updated-gryphon-office-610x425.jpeg" width=90% style="margin-left:5%; margin-right:5%;">
          <p style="width:90%;margin-left:auto; margin-right:auto;margin-bottom:5px;">We are a team of 200 students, we rely on example example example example example</p>
          
          
-       <a href="hdhd" style="border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none; transition: border-bottom-color 0.3s ease;" 
+       <a href="https://en.wikipedia.org/wiki/The_Gryphon" style="border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none; transition: border-bottom-color 0.3s ease;" 
    onmouseover="this.style.borderBottomColor='black'" 
    onmouseout="this.style.borderBottomColor='transparent'">
             
             <button style="padding-left:5px;  color: black !important;">More about us</button>
-            <img src="arrow-up-right-icon-lg.png" width=22px style="position: relative; bottom:-6px; left: -4px;"> 
+            <img src="https://stepzach.github.io/thegryph/arrow-up-right-icon-lg.png" width=22px style="position: relative; bottom:-6px; left: -4px;"> 
             
             </a>
             </div>
             <div style="width:100%;">
            <p style="width:90%; margin-left:auto; margin-right:auto; margin-bottom:5px;">Do you think you have what it takes, join us</p>
-             <a href="hdhd" style="position: relative; border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none;transition: border-bottom-color 0.3s ease;" 
+             <a href="https://engage.luu.org.uk/groups/3R9/the-gryphon?utm_source=luuorguk&utm_campaign=clubsocpage/" style="position: relative; border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none;transition: border-bottom-color 0.3s ease;" 
    onmouseover="this.style.borderBottomColor='black'" 
    onmouseout="this.style.borderBottomColor='transparent'">
             
             <button style="padding-left:5px;position: relative;  color: black !important;">Get Involved</button>
-            <img src="arrow-up-right-icon-lg.png" width=22px style="position: relative; bottom:-6px; left: -4px;">
+            <img src="https://stepzach.github.io/thegryph/arrow-up-right-icon-lg.png" width=22px style="position: relative; bottom:-6px; left: -4px;">
             
             </a>
             
@@ -226,19 +421,851 @@
 </div>
     </div>
       
+    <h3 style="
+    padding-left: 10px;
+    margin: 0;
+    font-size: x-large;
+" class="featured-stories-heading">Featured stories</h3>
+
+
+<style>
+@media (max-width: 575px) {
+  .featured-stories-heading {
+    display: none;
+  }
+}
+@media (min-width: 576px) {
+  .latest-stories-heading {
+    display: none;
+  }
+}
+</style>
+  
+ <div class="articles-wrapperZZ">
+    <div class="article-gridZZ" id="articles-containerA">
+        <div class="loader-container" id="loaderA">
+            <div class="loader"></div>
+        </div>
+        <!-- Articles will be dynamically added here -->
+      
+    </div>
+    <div class="article-gridZZ" id="articles-containerB">
+         <div class="loader-container" id="loaderB">
+            <div class="loader"></div>
+        </div>
+        <!-- Articles will be dynamically added here -->
+     
+    </div>
+    <div class="article-gridZZ" id="articles-containerC">
+         <div class="loader-container" id="loaderC">
+            <div class="loader"></div>
+        </div>
+        <!-- Articles will be dynamically added here -->
+      
+    </div>
+    <div class="article-gridZZ" id="articles-containerD">
+         <div class="loader-container" id="loaderD">
+            <div class="loader"></div>
+        </div>
+        <!-- Articles will be dynamically added here -->
+        
+    </div>
+</div>
+
+
+ <div class="article-gridZZA" id="articles-containerE" style="
+    border-top: solid 2px rgba(192,192,192,0.6);
+">
+        <div class="loader-container" id="loaderE">
+            <div class="loader"></div>
+        </div>
+        <!-- Articles will be dynamically added here -->
+      
+    </div>
+    <div class="article-gridZZA" id="articles-containerF">
+         <div class="loader-container" id="loaderF">
+            <div class="loader"></div>
+        </div>
+        <!-- Articles will be dynamically added here -->
+       
+    </div>
+
+       <div class="article-gridZZA" id="articles-containerG" style="
+    border-top: solid 2px rgba(192,192,192,0.6); margin-top:20px; padding-top:40px;
+">
+        <div class="loader-container" id="loaderG">
+            <div class="loader"></div>
+        </div>
+        <!-- Articles will be dynamically added here -->
+        
+    </div>
+
+    
+<style> 
+
+@media screen and (max-width: 432px) {
+  .columnss-1 {
+    display: none !important;
+  }
+}
+
+.articles-wrapperZZ {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping to a new row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  margin: 0;
+  padding: 0;
+}
+
+.article-gridZZ {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%; /*  Initial width for smallest screens */
+  flex-shrink: 0; /* Prevent shrinking below content size */
+  position: relative;
+  min-height:100px;
+}
+
+.article-gridZZA {
+  box-sizing: border-box;
+  padding: 10px;
+  width: 100%; /*  Initial width for smallest screens */
+  flex-shrink: 0; /* Prevent shrinking below content size */
+  position: relative;
+  min-height:100px;
+}
+@media (min-width: 576px) {
+  .article-gridZZA {
+    display: none !important;
+  }
+}
+
+/* Small screens: show 2 items */
+@media (min-width: 576px) {
+  .article-gridZZ {
+    width: 50% !important;
+  }
+}
+
+
+/* Medium screens: Show 3 items */
+@media (min-width: 768px) {
+  .article-gridZZ {
+    width: 33.333% !important;
+  }
+}
+
+/* Large screens: Show 4 items */
+@media (min-width: 992px) {
+  .article-gridZZ {
+    width: 25% !important;
+  }
+}
+
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+    .article-gridZZ {
+        width: 25% !important;
+    }
+}
+</style>
+
+<script>
+  const getRSSFeedNewsA = async () => { // Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/news/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-containerA'); // Correctly targeting the news container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      // Only process the first item
+      const item = items[0]; // Get the first item in the NodeList
+
+      if (item) { // Check if an item exists
+
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const customLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+           
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}" target="_blank">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+           
+          </div>
+         
+        `;
+
+        articlesContainer.appendChild(articleElement);
+
+      }
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-containerA');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedNewsA();
+</script>
+<style>
+@media (min-width: 650px) {
+    .bbdstep {
+        display: none !important;
+ }
+     }
+    
+    </style>
+
+
+<script>
+  const getRSSFeedNewsE = async () => { // Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/arts/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-containerE'); // Correctly targeting the news container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      // Only process the first item
+      const item = items[0]; // Get the first item in the NodeList
+
+      if (item) { // Check if an item exists
+
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const customLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+         
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}" target="_blank">${title}</a></h2>
+            <p class="article-author-date" style="margin:0;">By ${author}</p>
+            <p class="article-description" style="margin:0;">${cleanedDescription}</p>
+           
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+
+      }
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-containerE');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedNewsE();
+</script>
+<script>
+  const getRSSFeedNewsF = async () => { // Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/views/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-containerF'); // Correctly targeting the news container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      // Only process the first item
+      const item = items[0]; // Get the first item in the NodeList
+
+      if (item) { // Check if an item exists
+
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const customLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+         
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}" target="_blank">${title}</a></h2>
+            <p class="article-author-date" style="margin:0;">By ${author}</p>
+            <p class="article-description" style="margin:0;">${cleanedDescription}</p>
+           
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+
+      }
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-containerF');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedNewsF();
+</script>
+
+
+
+
+<script>
+  const getRSSFeedNewsB = async () => { // Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/features/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-containerB'); // Correctly targeting the news container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      // Only process the first item
+      const item = items[0]; // Get the first item in the NodeList
+
+      if (item) { // Check if an item exists
+
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const customLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+           
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}" target="_blank">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+          
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+
+      }
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-containerB');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedNewsB();
+</script>
+<script>
+  const getRSSFeedNewsG = async () => { // Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/features/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-containerG'); // Correctly targeting the news container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      // Only process the first item
+      const item = items[0]; // Get the first item in the NodeList
+
+      if (item) { // Check if an item exists
+
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const customLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+           
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}" target="_blank">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+          
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+
+      }
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-containerG');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedNewsG();
+</script>
+<script>
+  const getRSSFeedNewsC = async () => { // Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/lifestyle-lifestyleandculture/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-containerC'); // Correctly targeting the news container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      // Only process the first item
+      const item = items[0]; // Get the first item in the NodeList
+
+      if (item) { // Check if an item exists
+
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const customLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+           
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}" target="_blank">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+           
+          </div>
+        `;
+
+        articlesContainer.appendChild(articleElement);
+
+      }
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-containerC');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedNewsC();
+</script>
+<script>
+  const getRSSFeedNewsD = async () => { // Renamed function
+    const timestamp = new Date().getTime();
+    const feedUrl = `https://www.thegryphon.co.uk/category/sport/feed?t=${timestamp}`;
+
+    try {
+      const response = await fetch(feedUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const xml = await response.text();
+
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(xml, 'text/xml');
+      const items = xmlDoc.querySelectorAll('item');
+
+      const articlesContainer = document.getElementById('articles-containerD'); // Correctly targeting the news container
+
+      const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'];
+        const day = date.getDate();
+        const daySuffix = (d) => {
+          if (d > 3 && d < 21) return 'th';
+          switch (d % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+          }
+        };
+        return `${weekdays[date.getDay()]} ${day}${daySuffix(day)} ${months[date.getMonth()]}`;
+      };
+
+      // Only process the first item
+      const item = items[0]; // Get the first item in the NodeList
+
+      if (item) { // Check if an item exists
+
+        const title = item.querySelector('title')?.textContent || 'No Title';
+        const customLink = item.querySelector('link')?.textContent || '#'; // Store the original link
+
+        const descriptionRaw = item.querySelector('description')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const author = item.querySelector('dc\\:creator')?.textContent || item.querySelector('creator')?.textContent || 'Unknown Author';
+
+        // Categories (remove News, Homepage, University)
+        const allCategories = Array.from(item.querySelectorAll('category')).map(cat => cat.textContent.trim());
+        const excludedCategories = ["News", "Homepage", "University", "news", "homepage", "university", "student", "Student", "Leeds", "leeds"];
+        const filteredCategories = allCategories.filter(cat => !excludedCategories.includes(cat)).slice(0, 3);
+
+        // Parse <description> for image
+        const descDoc = new DOMParser().parseFromString(descriptionRaw, 'text/html');
+        const imgTag = descDoc.querySelector('img');
+        const imageUrl = imgTag ? imgTag.getAttribute('src') : 'https://via.placeholder.com/300x200';
+
+        // Extract cleaned text content
+        const paragraphs = descDoc.querySelectorAll('p');
+        let cleanedDescription = '';
+        paragraphs.forEach(p => {
+          if (!p.innerHTML.includes('The post')) {
+            cleanedDescription += p.textContent + ' ';
+          }
+        });
+        cleanedDescription = cleanedDescription.trim();
+
+        const articleElement = document.createElement('div');
+        articleElement.classList.add('article-item');
+
+        articleElement.innerHTML = `
+          <div class="image-wrapper">
+            <img src="${imageUrl}" alt="Article Image" class="article-image">
+           
+          </div>
+          <div class="article-content">
+            <h2 class="article-title"><a href="${customLink}" target="_blank">${title}</a></h2>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
+            <p class="article-description">${cleanedDescription}</p>
+          
+          </div>
+        `; 
+
+        articlesContainer.appendChild(articleElement);
+
+      }
+    } catch (error) {
+      console.error('Error fetching or processing RSS feed:', error);
+      const articlesContainer = document.getElementById('articles-containerD');
+      articlesContainer.innerHTML = '<p>Failed to load articles. Please try again later.</p>';
+    }
+  };
+
+  getRSSFeedNewsD();
+</script>
+  
          
 
 
 
 <div class="containerLOL">
-  <div class="columnLOL1 image-containerLOL" style="border-right: solid 2px rgba(192,192,192,0.6); max-width:290px; min-width:260px;">
-     <img src="https://image.isu.pub/230526154123-84e71f5b38390798ec80c684113e9fa2/jpg/page_1_thumb_large.jpg" alt="Event Image" style=" border:solid 2px rgba(192,192,192,0.6); width: 100%;
+  <div class="columnLOL1 image-containerLOL" style="border-right: solid 2px rgba(192,192,192,0.6); border-top: solid 2px rgba(192, 192, 192, 0.6); max-width:290px; min-width:260px;">
+     <img src="https://image.isu.pub/210512114543-34b381acf59310fb96f33eeb3c44d225/jpg/page_1_social_preview.jpg" alt="Event Image" style=" border:solid 2px rgba(192,192,192,0.6); width: 100%;
   height: 300px; 
   display: block;
   margin: 0 auto;
    object-fit: cover;
   object-position: top;">
-    <h3 style="margin-bottom:5px;" class="image-titleLOL">Latest Issue #45</h3> 
+    <h3 style="margin-bottom:5px;" class="image-titleLOL">Latest Issue</h3> 
    
     
     
@@ -246,7 +1273,7 @@
        
 
 
-     <a href="hdhd" style="position: relative; border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none;transition: border-bottom-color 0.3s ease;" 
+     <a href="https://issuu.com/thegryphon" style="position: relative; border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none;transition: border-bottom-color 0.3s ease;" 
    onmouseover="this.style.borderBottomColor='black'" 
    onmouseout="this.style.borderBottomColor='transparent'">
             
@@ -260,19 +1287,19 @@
     
      font-family: 'Vollkorn', serif;
            padding-left:5px;position: relative;">View PDF</button>
-            <img src="arrow-up-right-icon-lg.png"  width=22px style="position: relative; bottom:-6px; left: -4px;">
+            <img src="https://stepzach.github.io/thegryph/arrow-up-right-icon-lg.png"  width=22px style="position: relative; bottom:-6px; left: -4px;">
             
             </a> 
   </div> 
   <div style="display: flex;">
-   <div class="columnLOLip" style="text-align:center; width:50%; margin-top:-70px; border-right: solid 2px rgba(192,192,192,0.6); border-bottom: solid 2px rgba(192,192,192,0.6); padding-bottom:19px;">
-     <img class="whoops" src="https://image.isu.pub/230526154123-84e71f5b38390798ec80c684113e9fa2/jpg/page_1_thumb_large.jpg" alt="Event Image" style=" border:solid 2px rgba(192,192,192,0.6); width:260px;
+   <div class="columnLOLip" style="text-align:center; width:50%; margin-top:10px; border-right: solid 2px rgba(192,192,192,0.6); border-bottom: solid 2px rgba(192,192,192,0.6); padding-bottom:19px;">
+     <img class="whoops" src="https://image.isu.pub/210512114543-34b381acf59310fb96f33eeb3c44d225/jpg/page_1_social_preview.jpg" alt="Event Image" style=" border:solid 2px rgba(192,192,192,0.6); width:260px;
   height: 300px; 
   display: block;
   margin: 0 auto;
-   object-fit: cover;
+   object-fit: contain;
   object-position: top;">
-    <h3 style="margin-bottom:5px;" class="image-titleLOL">Latest Issue #45</h3> 
+    <h3 style="margin-bottom:5px;" class="image-titleLOL">Latest Issue</h3> 
    
     
     
@@ -280,7 +1307,7 @@
        
 
 
-     <a href="hdhd" style="position: relative; border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none;transition: border-bottom-color 0.3s ease;" 
+     <a href="https://issuu.com/thegryphon" style="position: relative; border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none;transition: border-bottom-color 0.3s ease;"  
    onmouseover="this.style.borderBottomColor='black'" 
    onmouseout="this.style.borderBottomColor='transparent'">
             
@@ -294,51 +1321,85 @@
     
      font-family: 'Vollkorn', serif;
            padding-left:5px;position: relative;">View PDF</button>
-            <img src="arrow-up-right-icon-lg.png"  width=22px style="position: relative; bottom:-6px; left: -4px;">
+            <img src="https://stepzach.github.io/thegryph/arrow-up-right-icon-lg.png"  width=22px style="position: relative; bottom:-6px; left: -4px;">
             
             </a>
   </div> 
-  <div class="shit" style="width:50%; margin-top:-75px; border-bottom: solid 2px rgba(192,192,192,0.6);">
+  <div class="shit" style="width:50%; margin-top: 10px; border-bottom: solid 2px rgba(192,192,192,0.6);  border-top: solid 2px rgba(192,192,192,0.6); padding-top:20px;">
     <div class="abutus" style="width:100%;">
-         <p style="width:90%;margin-left:auto; margin-right:auto; font-size:23px; font-weight:800; margin-top:0; margin-bottom:5px;">About Us</p> 
+         <p style="width:90%;margin-left:auto; margin-right:auto; font-size:23px; font-weight:800; margin-top:0; margin-bottom:5px;">About Us</p>  
         <img class="imgshit" src="https://plus.unsplash.com/premium_photo-1661767467261-4a4bed92a507?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmVzc2lvbmFsJTIwdGVhbXxlbnwwfHwwfHx8MA%3D%3D" width=90% height=120px style=" object-fit: cover; margin-left:5%; margin-right:5%;">
          <p style="width:90%;margin-left:auto; margin-right:auto;margin-bottom:5px;">We are a team of 200 students, we rely on example example example example example</p>
          
          
-       <a href="hdhd" style="border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none; transition: border-bottom-color 0.3s ease; color:black !important;" 
+       <a href="https://en.wikipedia.org/wiki/The_Gryphon" style="border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none; transition: border-bottom-color 0.3s ease; color:black !important;" 
    onmouseover="this.style.borderBottomColor='black'" 
    onmouseout="this.style.borderBottomColor='transparent'">
             
-            <button style="padding-left:5px;  border: none; background-color:transparent; font-size: 1rem;
+            <button  class="dabonem" style="padding-left:5px;  border: none; background-color:transparent; font-size: 1rem;
     
      font-family: 'Vollkorn', serif; text-decoration:none; color:black !important;">More about us</button>
-            <img src="arrow-up-right-icon-lg.png" width=22px style="position: relative; bottom:-6px; left: -4px;"> 
+            <img src="https://stepzach.github.io/thegryph/arrow-up-right-icon-lg.png" width=22px style="position: relative; bottom:-6px; left: -4px;"> 
             
             </a> 
             </div>
             <div style="width:100%;">
+            <img class="bpmbpm" src="https://www.luu.org.uk/wp-content/uploads/2024/12/updated-gryphon-office-610x425.jpeg" style="width:90%;  display: block;  height: 200px; margin-left: auto; margin-right: auto; margin-top:10px; ">
            <p style="width:90%; margin-left:auto; margin-right:auto; margin-bottom:5px;">Do you think you have what it takes, join us</p>
-             <a href="hdhd" style="position: relative; border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none;transition: border-bottom-color 0.3s ease; color:black !important;" 
+             <a href="https://engage.luu.org.uk/groups/3R9/the-gryphon?utm_source=luuorguk&utm_campaign=clubsocpage/" style="position: relative; border-bottom:solid 1.5px transparent; width:auto;margin-left:11px; padding:0; text-decoration:none;transition: border-bottom-color 0.3s ease; color:black !important;" 
    onmouseover="this.style.borderBottomColor='black'" 
    onmouseout="this.style.borderBottomColor='transparent'">
             
-            <button style="padding-left:5px;position: relative; border: none; background-color:transparent; font-size: 1rem;
+            <button  class="dabonem" style="padding-left:5px;position: relative; border: none; background-color:transparent; font-size: 1rem;
     
      font-family: 'Vollkorn', serif; color:black !important;">Get Involved</button>
-            <img src="arrow-up-right-icon-lg.png" width=22px style="position: relative; bottom:-6px; left: -4px;">
+            <img src="https://stepzach.github.io/thegryph/arrow-up-right-icon-lg.png" width=22px style="position: relative; bottom:-6px; left: -4px;">
             
             </a>
             
         </div></div></div>
         
-         <div class="columnLOLmob" style="text-align:center; width:100%; margin-top:-30px; border-bottom: solid 2px rgba(192,192,192,0.6); padding-bottom:19px;">
-     <img class="whoops" src="https://image.isu.pub/230526154123-84e71f5b38390798ec80c684113e9fa2/jpg/page_1_thumb_large.jpg" alt="Event Image" style=" border:solid 2px rgba(192,192,192,0.6); width:250px;
-  height: auto; 
+       <style>
+       
+       @media (min-width: 421px) {
+       
+       
+       
+       .bpmbpm { 
+       
+       display: none !important; }
+       
+       }
+       @media (max-width: 421px) {
+        .dabonem { 
+       
+       margin-left: 5px !important; }
+       
+       .whoops  { 
+       
+       width: 90% !important;
+       height: 300px  !important;
+       overflow: hidden;
+       }
+       
+       #brakesr  { 
+       
+     border: none !important;
+       }
+       
+       }
+       
+       
+       </style> 
+        
+         <div class="columnLOLmob"  style="text-align:center; width:100%; margin-top:20px; border-bottom: solid 2px rgba(192,192,192,0.6); padding-bottom:19px;">
+     <img class="whoops" src="https://image.isu.pub/210512114543-34b381acf59310fb96f33eeb3c44d225/jpg/page_1_social_preview.jpg" alt="Event Image" style=" border:solid 2px rgba(192,192,192,0.6); width:250px;
+  height: auto;  
   display: block;
   margin: 0 auto;
    object-fit: cover;
   object-position: top;">
-    <h3 style="margin-bottom:5px;" class="image-titleLOL">Latest Issue #45</h3> 
+    <h3 style="margin-bottom:5px;" class="image-titleLOL">Latest Issue</h3> 
    
     
     
@@ -360,15 +1421,15 @@
     
      font-family: 'Vollkorn', serif;
            padding-left:5px;position: relative;">View PDF</button>
-            <img src="arrow-up-right-icon-lg.png"  width=22px style="position: relative; bottom:-6px; left: -4px;">
+            <img src="https://stepzach.github.io/thegryph/arrow-up-right-icon-lg.png"  width=22px style="position: relative; bottom:-6px; left: -4px;">
             
             </a>
-  </div> 
+  </div>  
    
-  <div class="columnLOL10 image-containerLOL10" style="border-right: solid 2px rgba(192,192,192,0.6); max-width:310px; min-width:300px;margin-top:0; padding-left:7px;">
+  <div class="columnLOL10 image-containerLOL10" style="border-right: solid 2px  rgba(192,192,192,0.6); border-top: solid 2px rgba(192, 192, 192, 0.6); max-width:310px; min-width:300px;margin-top:0; padding-left:18px; margin: 0">
      <img src="https://laxcrossword.com/wp-content/uploads/2024/04/Los-Angeles-Times-Crossword-Friday-12-Apr-2024.png"  alt="Event Image" style="  width: 100%;
   height: 300px;
-  display: block;
+  display: block; 
   margin: 0 auto;
    object-fit: cover;
   object-position: top;">
@@ -387,13 +1448,13 @@
     
      font-family: 'Vollkorn', serif;
            padding-left:5px;position: relative;">Play</button>
-            <img src="arrow-up-right-icon-lg.png"  width=22px style="position: relative; bottom:-6px; left: -4px;">
+            <img src="https://stepzach.github.io/thegryph/arrow-up-right-icon-lg.png"  width=22px style="position: relative; bottom:-6px; left: -4px;">
             
             </a>
-  </div> 
+  </div>  
   
   
-  <div class="columnLOL2">
+  <div class="columnLOL2" id="brakesr" style=" border-top: solid 2px rgba(192, 192, 192, 0.6);" >
   
   <h2 style="margin-top:0; margin-bottom:15px; font-size:23px;">Upcoming Events</h2>
      <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 23px;">
@@ -406,7 +1467,7 @@
     </thead>
     <tbody>
         <tr class="expandable-row" data-show-name="Show 1" data-date="2024-03-08" data-location="New York" style="cursor: pointer;">
-            <td style="border: 2px solid rgba(192,192,192,0.6); padding: 8px; text-align: left; font-size: 18px;">Writting event</td>
+            <td style="border: 2px solid rgba(192,192,192,0.6); padding: 8px; text-align: left; font-size: 18px;">Example</td>
             <td style="border: 2px solid rgba(192,192,192,0.6); padding: 8px; text-align: left;font-size: 18px;">2024-03-08</td>
             <td class="location-cell" style="border: 2px solid rgba(192,192,192,0.6); padding: 8px; text-align: left; position: relative;font-size: 18px;">
               York
@@ -491,77 +1552,162 @@
  </div>
 
 
+
     
          <div id="news" class="content-section">
+         <h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> NEWS</h3>
     <div class="article-grid" id="articles-container">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
 <div id="features" class="content-section">
+<h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> FEATURES</h3>
     <div class="article-grid" id="articles-container1">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
 <div id="views" class="content-section">
+<h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> VIEWS</h3>
     <div class="article-grid" id="articles-container2">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
         <div id="society" class="content-section">
+        <h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> SOCIETY</h3>
     <div class="article-grid" id="articles-container3">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
         <div id="climate" class="content-section">
+        <h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> CLIMATE</h3>
     <div class="article-grid" id="articles-container4">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
         <div id="fashion" class="content-section">
+        <h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> FASHION</h3>
     <div class="article-grid" id="articles-container5">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
         <div id="lifestyle" class="content-section">
+        <h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> LIFESTYLE</h3>
     <div class="article-grid" id="articles-container6">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
         <div id="arts" class="content-section">
+        <h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> ARTS</h3>
     <div class="article-grid" id="articles-container7">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
         <div id="photography" class="content-section">
+        <h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> PHOTOGRAPHY</h3>
     <div class="article-grid" id="articles-container8">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
         <div id="music" class="content-section">
+        <h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> MUSIC</h3>
     <div class="article-grid" id="articles-container9">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
         <div id="science" class="content-section">
+        <h3 style="
+    position: relative;
+    top: -10px; 
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> SCIENCE</h3>
     <div class="article-grid" id="articles-container10">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
 
         <div id="sport" class="content-section">
+        <h3 style="
+    position: relative;
+    top: -10px;
+    margin: 0;
+    margin-left: 10px;
+    font-size: 2em;
+"> SPORT</h3>
     <div class="article-grid" id="articles-container11">
         <!-- Articles will be dynamically added here -->
     </div>
 </div>
-        
+         
 <script>
   const getRSSFeedNews = async () => { // Renamed function
     const timestamp = new Date().getTime();
@@ -633,16 +1779,16 @@
 
         articleElement.innerHTML = `
           <div class="image-wrapper">
-            <img src="${imageUrl}" alt="Article Image" class="article-image">
+             <a href="${customLink}" target="_blank"><img src="${imageUrl}" alt="Article Image" class="article-image"></a>
             <div class="article-labels">
               ${filteredCategories.map(cat => `<span class="article-label">${cat}</span>`).join('')}
-            </div>
-          </div>
+            </div> 
+          </div> 
           <div class="article-content">
             <h2 class="article-title"><a href="${customLink}" target="_blank">${title}</a></h2>
-            <p class="article-author-date">By ${author} | ${formatDate(pubDate)}</p>
-            <p class="article-description">${cleanedDescription}</p>
-            <a href="${customLink}" target="_blank" class="read-more">Read Full Article →</a>
+            <p class="article-author-date">By ${author} | ${formatDate(pubDate)} <a href="${customLink}" target="_blank"></a></p>
+           <p class="article-description" >${cleanedDescription}</p>
+           
           </div>
         `;
 
@@ -824,7 +1970,7 @@
         cleanedDescription = cleanedDescription.trim();
 
         const articleElement = document.createElement('div');
-        articleElement.classList.add('article-item');
+        articleElement.classList.add('article-item'); 
 
         articleElement.innerHTML = `
           <div class="image-wrapper">
@@ -1324,6 +2470,8 @@
             <p class="article-description">${cleanedDescription}</p>
             <a href="${customLink}" target="_blank"  class="read-more">Read Full Article →</a>
           </div>
+           <div class="bbdstep" style="margin-top: 10px; margin-bottom: 10px; background-color: #889888 !important; height:2px; 
+          width: 80%; border-radius:1px; margin-left:auto; margin-right:auto; display: block;"></div>
         `;
 
         articlesContainer.appendChild(articleElement);
@@ -1597,7 +2745,7 @@
         paragraphs.forEach(p => {
           if (!p.innerHTML.includes('The post')) {
             cleanedDescription += p.textContent + ' ';
-          }
+          } 
         });
         cleanedDescription = cleanedDescription.trim();
 
@@ -1761,26 +2909,204 @@
       <p style="padding-left:20px; padding-right:20px;">
         As an independent media outlet, we hold the University and the Union to account where possible. We provide a range of content that is of interest to students and residents of Leeds.
       </p>
-       
+        
      <div class="write4us" style="display: flex; align-items: center; justify-content: space-around; position: absolute; bottom:30px; left:-8px; width:100%; margin:0;">  
   <p class="zach" style="font-size:18px; line-height:1px; margin: 0; margin-top:10px;"> 
-    <a href="https://zacharystephens.info/portfolio" style="color: inherit; text-decoration: none;">
-      <u style="text-align:left">Write for us</u> 
-    </a> 
+     <a href="#" id="write-for-us-link" style="color: inherit; text-decoration: none;">
+    <u style="text-align:left">Write for us</u>
+  </a>
   </p> 
+  
+    <div class="overlay" id="overlay">
+    <div class="overlay-content">
+      <span class="close-button" id="close-overlay">×</span> <!-- The "X" close button -->
+      <h2>Write for Us</h2>
+     
+      <p style="text-align: left; font-size: 0.9em !important">
+        We are always looking for talented writers to contribute to the Gryphon! <span class="disap"> If you have a passion for newspapers (or writting in general), we encourage you to submit your work. Please review the following guidelines before submitting your article:</span>
+<br> <br>
+         <b>Original Content:</b>  We only accept original articles that have not been previously published elsewhere.
+        <br>
+       <b>Writing Style:</b> Use a clear and concise writing style, and ensure your article is well-structured and easy to read.
+      <br>
+        <b>Images:</b>  If you include images, please ensure you have the necessary rights to use them. Provide appropriate attribution.
+<br> <br>
+        We will review your submission and notify you. If your article is selected for publication. We reserve the right to edit articles for clarity and style.
+      </p>
+    </div>
+  </div>
+  
+ 
+  <style>
+   
+    /* Overlay Styles */
+    .overlay { 
+      position: fixed; /* Stay in place even when scrolling */
+      top: 0;
+      left: -10%;
+      margin:0;
+      padding:0;
+      width: 120%;
+      min-height: 100vh; /* Use vh for viewport height */
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+      z-index: 1000; /* Ensure it's on top of everything */
+      display: none; /* Hidden by default */
+      justify-content: center; /* Center content horizontally */
+      align-items: center;      /* Center content vertically */
+    }
+    
+     @media (max-width: 421px) {
+        .overlay { 
+       
+       align-items: stretch !important;
+       
+       
+       } 
+       .disap  { 
+       
+       display: none !important;
+       
+       
+       }
+        .overlay-content {
+        padding-left: 60px !important;
+        padding-right: 60px !important;;
+       } 
+       
+        .close-button {
+        right:60px !important;
+        
+       }
+        }
+    
+
+    .overlay-content {
+      background-color: #fffdf9; 
+      padding: 20px;
+      border-radius: 5px;
+      width: 80%; /* Adjust as needed */
+      max-width: 800px; /*  Maximum width for responsiveness */
+      position: relative; /*  For positioning the close button */
+      text-align: center; /* Example styling, adjust as desired */
+    }
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 44px;
+      color: dark-green;
+      cursor: pointer;
+      font-weight: bold; /* Make the cross more visible */
+    }
+
+    .overlay.active {
+      display: flex; /*  Make it visible */
+    }
+
+   
+  </style>
+  
+   <script>
+    // Get the elements
+    const link = document.getElementById("write-for-us-link");
+   
+    const overlay = document.getElementById("overlay");
+   
+    const closeButton = document.getElementById("close-overlay");
+
+    // Function to open the overlay
+    function openOverlay() {
+      overlay.classList.add("active");
+    }
+
+    // Function to close the overlay
+    function closeOverlay() {
+      overlay.classList.remove("active");
+    }
+
+    // Add event listeners
+    link.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the link from navigating
+      openOverlay();
+    });
+
+    closeButton.addEventListener("click", closeOverlay);
+
+    // Close the overlay if the user clicks outside the content (optional)
+    overlay.addEventListener("click", function(event) {
+      if (event.target === overlay) {
+        closeOverlay();
+      }
+    });
+  </script>
+ 
+  <div class="overlay" id="overlay2">
+    <div class="overlay-content">
+      <span class="close-button" id="close-overlay2">×</span> <!-- The "X" close button -->
+      <h2>Advertise With Us</h2>
+     
+     <p style="text-align: left; font-size: 0.9em !important">
+    Looking to connect with engaged readers? The Gryphon offers a unique platform to showcase your brand and reach a Student population.
+    <br><br>
+    <b><u>Why Advertise with Us?</u></b><br>
+    <span class="disap" ><br> 
+       <b>Targeted Reach:</b>  Connect with a specific demographic interested in Local news, arts & culture and student life.</span><br>
+    <b>High Engagement:</b>  Our readers are actively involved and value the content we provide.
+   <br> <b>Multiple Opportunities:</b>  We offer a range of advertising options to suit your needs and budget, including banner ads and sponsored content.
+    <br><br>
+    <b>Interested in learning more?</b> <br>Contact us at editor@thegryphon.co.uk to discuss advertising opportunities and rates.  We look forward to partnering with you!
+</p>
+    </div>
+  </div>
    <p class="zach" style="font-size:18px; line-height:1px; margin: 0; margin-top:10px;">
-  <a href="https://zacharystephens.info/portfolio" style="color: inherit; text-decoration: none;">
+  <a href="#" id="write-for-us-link2" style="color: inherit; text-decoration: none;">
   <u style="text-align:right;">Advertise With Us</u>
   </a>
-  </p>
+  </p> 
 </div>
+
+  <script>
+    // Get the elements
+    const link2 = document.getElementById("write-for-us-link2");
+   
+    const overlay2 = document.getElementById("overlay2");
+   
+    const closeButton2 = document.getElementById("close-overlay2");
+
+    // Function to open the overlay
+    function openOverlay2() {
+      overlay2.classList.add("active");
+    }
+
+    // Function to close the overlay
+    function closeOverlay2() {
+      overlay2.classList.remove("active");
+    }
+
+    // Add event listeners
+    link2.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent the link from navigating
+      openOverlay2();
+    });
+
+    closeButton2.addEventListener("click", closeOverlay2);
+
+    // Close the overlay if the user clicks outside the content (optional)
+    overlay2.addEventListener("click", function(event) {
+      if (event.target === overlay2) {
+        closeOverlay2();
+      }
+    });
+  </script>
+  
     </div>
     <div class="contact-column">  <!-- NEW COLUMN -->
       <h3>Contact Us</h3>
-      <p style="font-size:20px; line-height:9px; color: inherit; text-decoration: none;" >info@example.com</p>
-      <p style="font-size:20px; line-height:9px; padding-bottom:30px; color: inherit; text-decoration: none !important; color:#1b5f35 !important; ">07 4567 8909</p>
+      <p style="font-size:20px; line-height:9px; color: inherit; padding-bottom:30px; text-decoration: none;" > editor@thegryphon.co.uk</p>
+      
        <hr class="zachline" style="border: none; border-top: 2px solid #1b5f35; margin: -12px -20px; width: 850px;"> 
-      <p class="zach" style="position: absolute; bottom: -6px; z-index:100;font-size:16px; line-height:1px;">Website by <a href="https://zacharystephens.info/portfolio" style="color: inherit; text-decoration: none;"><u>Zach</u></a></p>
+      <p class="zach" style="position: absolute; bottom: -6px; z-index:1;font-size:16px; line-height:1px;"><a href="https://zacharystephens.info/portfolio" style="color: inherit; text-decoration: none;"><u>Issues with website?</u></a></p>
     </div>
   </div>
 </footer>
@@ -1810,6 +3136,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+       
     }
 
     .logo {
@@ -1951,6 +3278,9 @@
             .header {
                 flex-direction: column;
                 align-items: center;
+                        padding-bottom: 0px;
+        border-bottom: solid 2px #acbcac;
+        padding-bottom: 4px;
             }
 
             .logo {
@@ -1973,6 +3303,7 @@
     overflow: hidden;
     transition: transform 0.3s ease;
     width: 100%;
+     
 }
 
   .article-image {
@@ -2333,6 +3664,11 @@ footer {
   .current-date {
     display:none;
   }
+  
+  #home {
+    top: -40px;
+    position: relative;
+}
 }
 @media (max-width: 406px) {
   .navigationMOB a {
@@ -2343,27 +3679,51 @@ footer {
 }
 @media (max-width: 480px) {
   .logo img {
-    width: 400px;
+    width: 390px;
+   
+    translate: -30px;
     
   }
 } 
-@media (max-width: 432px) {
+@media (max-width: 469px) {
+  .logo img {
+    width: 370px;
+   
+    translate: -25px;
+    
+  }
+} 
+@media (max-width: 449px) {
   .logo img {
     width: 280px;
-    
+      translate: 0px;
   }
 }
 @media (max-width: 412px) {
   .logo img {
     width: 260px;
+     translate: -30px;
     
   }
+  .menu-buttonMOBILE {
+  right: 20px;
+  width:50px;
 }
+.menu-buttonMOBILE.open {
+right: 13px;
+  width:50px;
+}
+
+}
+
 @media (max-width: 380px) {
   .logo img {
     width: 240px;
     
   }
+  .menu-buttonMOBILE {
+  top: -2px;
+}
 }
 @media (max-width: 360px) {
   .logo img {
@@ -2415,14 +3775,29 @@ footer {
   }
   @media (max-width: 432px) {
  .social-icons a {
+ 
         text-decoration: none;
-        font-size: 25px;
-        color: #1b5f35; /* Change to desired color */
+        /* font-size: 25px; */
+        color: #889888 !important;
+       font-size:28px;
         transition: color 0.3s ease-in-out;
-        margin-left:6px;
-        margin-right:6px;
-        margin-top:-16px;
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-top:-35px;
+       
     }
+    
+    .social-icons {
+        
+        gap: 8px;
+        margin-left:-7px;
+        align-items: center;
+    }
+    .logo {
+    border-bottom: solid 2px #acbcac;
+    padding-bottom: 5px;
+  } 
+  
   }
   @media (max-width: 480px) {
    .current-date { 
@@ -2448,59 +3823,67 @@ footer {
 }
 
 .navigationMOBILE {
-    background-color: #1b5f35;
-    color: white;
-    padding: 2px 0;
-    text-align: center;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    
+  background-color: #fffdf9;
+ color: #1b5f35;
+  padding:0;
+  margin:0;
+  text-align: left;
+  font-weight: 700;  
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateX(0);
+    opacity: 1;
+  height: 100vh;
+  position: fixed;
+   width: 100%;
+  z-index: 100000000;
 }
 
 .navigationMOBILE.fixedMOBILE {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  
 }
 
 .navigationMOBILE ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    
-    
-    width: 100%;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  list-style: none;
+ 
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
 }
 
-
-
 .navigationMOBILE li {
-    flex-grow: 1;
-    text-align: center;
+  flex-grow: 1;
+  text-align: left;
    
+     padding: 0;
+  margin: 0;
+  margin-left: 30px;
+  
 }
 
 .navigationMOBILE a {
-  
-    color: white;
-    text-decoration: none;
-   
-    display: block;
-    font-size: 20px;
-    white-space: nowrap;
-    transition: font-size 0.3s ease, padding 0.3s ease; /* Smooth transition */
-   
+  color: #1b5f35;
+  text-decoration: none;
+  display: block;
+  font-size: 26px;
+  padding: 0;
+  margin:0;
+  white-space: nowrap;
+  transition: font-size 0.3s ease, padding 0.3s ease;
 }
-
 .navigationMOBILE a:hover {
-    color: white;
+    color: black;
     text-decoration: underline;
    
     display: block;
@@ -2511,28 +3894,7 @@ footer {
 .navigationMOBILE a.active {
     text-decoration: underline;
 }
-@media (max-width: 447px) {
-  .navigationMOBILE a {
-    font-size: 19px;
-    padding-left:0px;
-    padding-right:0px;
-  }
-}
-@media (max-width: 409px) {
-  .navigationMOBILE a {
-    font-size: 18px;
-    padding-left:0px;
-    padding-right:0px;
-  }
-}
-@media (max-width: 360px) {
-  .navigationMOBILE a {
-    font-size: 17px;
-    padding-left:0px;
-    padding-right:0px;
-    padding-top: 5px;
-  }
-}
+
 @media (max-width: 458px) {
   .contact-column {
    
@@ -2581,7 +3943,7 @@ footer {
 @media (max-width: 480px) {
   .feet {
   
-    margin: 0px !important; 
+    margin: 0px !important;  
     border-radius:0px !important;
      
   }
@@ -2593,6 +3955,9 @@ footer {
    background-color: #f9f4eb;
      
   }
+  .header   {
+ background-color: #fffdf9;
+} 
 }       
     @media (max-width: 727px) {
    .content-container {
@@ -2939,14 +4304,14 @@ footer {
 }
 @media (max-width: 560px) {
   .columnLOLip {
-    margin-top:-180px !important;
+   
     
 }
 .columnLOLip .whoops {
     width:240px !important;
 }
 .shit {
-    margin-top:-180px !important;
+   
     
 }
 }
@@ -2971,7 +4336,7 @@ footer {
      
  .shit {
    position:relative !important;
-     top: -60px !important;
+   
       padding-bottom: 20px !important;
    
 }
@@ -2989,14 +4354,119 @@ footer {
    
    a, a:visited, a:hover, a:active {
     text-decoration: none;   
-    color: inherit;
+    color: inherit; 
     }      
-    
+     
     </style>
     
-    
-    
+ <style>
+/* Basic loading spinner styles (feel free to customize) */
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #1b5f35;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto; /* Center the spinner */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.article-gridZZ, .article-gridZZA {
+  position: relative;
+}
+
+.loader-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7); /* Optional: Add a semi-transparent background */
+  z-index: 10; /* Ensure the spinner is on top of the content */
+}
+
+.hidden {
+  display: none;
+}
+</style>
+
+<div id="loading-overlay" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #fffdf9; z-index: 10;">
+    <div style="position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); color: #1b5f35; text-align: center;">  <!-- Added text-align:center -->
+        <div class="loader"></div>
+        <p>Fetching Articles..</p>
+    </div>
+</div>
+
+<style>
+
+
+
+@media (max-width: 450px) {
+#loading-overlay {
+top: 148px !important;
+}
+
+}
+
+@media (max-width: 768px) {
+#loading-overlay {
+top: 280px !important;
+} 
+
+}
+@media (min-width: 769px) {
+#loading-overlay {
+top: 150px !important; 
+}
+ 
+}
+@media (max-width: 480px) {
+#loading-overlay {
+top: 140px !important;
+}
+
+}
+@media (max-width: 433px) {
+#loading-overlay {
+top: 118px !important;
+}
+
+}
+@media (max-width: 360px) {
+#loading-overlay {
+top: 108px !important;
+}
+
+}
+ 
+</style>
     <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    const containers = ['articles-containerA', 'articles-containerB', 'articles-containerC', 'articles-containerD', 'articles-containerE', 'articles-containerF', 'articles-containerG'];
+
+    containers.forEach(containerId => {
+        const loaderContainerId = `loader${containerId.slice(-1).toUpperCase()}`; // Generate the loader ID.
+        const loaderContainer = document.getElementById(loaderContainerId);
+
+        if (loaderContainer) {
+            setTimeout(() => {
+                loaderContainer.classList.add('hidden');
+            }, 2500); // 2.5 seconds
+        } else {
+            console.warn(`Loader container with ID ${loaderContainerId} not found.`);
+        }
+    });
+});
 document.addEventListener('DOMContentLoaded', () => {
     const expandableRows = document.querySelectorAll('.expandable-row');
     const belowTableText = document.getElementById('below-table-text');
@@ -3032,7 +4502,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     arrowSVG.style.transform = 'rotate(0deg)';
                     belowTableText.style.display = 'block'; // Show the text when collapsing
                 }
-            }
+            } 
         });
 
         row.addEventListener('mouseover', () => {
@@ -3043,93 +4513,112 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+const navLinks = document.querySelectorAll('.navigation a');
+const contentSections = document.querySelectorAll('.content-section');
+const navigation = document.querySelector('.navigation');
+const navWrapper = document.querySelector('.nav-wrapper');
+let originalOffsetTop = navWrapper.offsetTop;
+const loadingOverlay = document.getElementById('loading-overlay');
 
-    const navLinks = document.querySelectorAll('.navigation a');
-        const contentSections = document.querySelectorAll('.content-section');
-        const navigation = document.querySelector('.navigation');
-        const navWrapper = document.querySelector('.nav-wrapper'); // Get the wrapper element
-        let originalOffsetTop = navWrapper.offsetTop; // Get the initial offset top of the wrapper
+const navLinksMOB = document.querySelectorAll('.navigationMOB a');
+const navigationMOB = document.querySelector('.navigationMOB');
+const navWrapperMOB = document.querySelector('.nav-wrapperMOB');
 
-        function handleScroll() {
-            if (window.pageYOffset >= originalOffsetTop) {
-                navigation.classList.add('fixed');
-                navWrapper.style.height = `${navigation.offsetHeight}px`; // Set wrapper height
-            } else {
-                navigation.classList.remove('fixed');
-                navWrapper.style.height = 'auto'; // Reset wrapper height
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll);
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                navLinks.forEach(link => link.classList.remove('active'));
-                contentSections.forEach(section => section.classList.remove('active'));
-
-                this.classList.add('active');
-
-                const targetSectionId = this.dataset.section;
-
-                const targetSection = document.getElementById(targetSectionId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                }
-            });
-        });
-        
-        
-        
-        const navLinksMOB = document.querySelectorAll('.navigationMOB a');
-        const contentSectionsMOB = document.querySelectorAll('.content-section');
-        const navigationMOB = document.querySelector('.navigationMOB');
-        const navWrapperMOB = document.querySelector('.nav-wrapperMOB'); // Get the wrapper element
-       
-        navLinksMOB.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                navLinksMOB.forEach(link => link.classList.remove('active'));
-                contentSections.forEach(section => section.classList.remove('active'));
-
-                this.classList.add('active');
-
-                const targetSectionId = this.dataset.section;
-
-                const targetSection = document.getElementById(targetSectionId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                }
-            });
-        });
-        
-        
-        const navLinksMOBILE = document.querySelectorAll('.navigationMOBILE a');
-const contentSectionsMOBILE = document.querySelectorAll('.content-section');
+const navLinksMOBILE = document.querySelectorAll('.navigationMOBILE a');
 const navigationMOBILE = document.querySelector('.navigationMOBILE');
-const navWrapperMOBILE = document.querySelector('.nav-wrapperMOBILE'); // Get the wrapper element
+const navWrapperMOBILE = document.querySelector('.nav-wrapperMOBILE');
+const menuToggleButton = document.getElementById('menu-toggle'); // Replace with your actual button ID
 
-navLinksMOBILE.forEach(link => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
 
-        navLinksMOBILE.forEach(link => link.classList.remove('active'));
-        contentSections.forEach(section => section.classList.remove('active'));
+// Object to track if a section has been clicked before
+const sectionClicked = {};
 
-        this.classList.add('active');
+function handleScroll() {
+    if (window.pageYOffset >= originalOffsetTop) {
+        navigation.classList.add('fixed');
+        navWrapper.style.height = `${navigation.offsetHeight}px`;
+    } else {
+        navigation.classList.remove('fixed');
+        navWrapper.style.height = 'auto';
+    }
+}
 
-        const targetSectionId = this.dataset.section;
+window.addEventListener('scroll', handleScroll);
 
-        const targetSection = document.getElementById(targetSectionId);
-        if (targetSection) {
-            targetSection.classList.add('active');
+function showLoadingOverlay() {
+    loadingOverlay.style.opacity = '1';  // Make it fully visible
+    loadingOverlay.style.display = 'block'; //  Ensure it's displayed.
+
+    //  Force a reflow to trigger the transition immediately
+    loadingOverlay.offsetHeight;
+}
+
+function hideLoadingOverlay() {
+    loadingOverlay.style.opacity = '0';
+    loadingOverlay.style.transition = 'opacity 0.5s ease-in-out'; // Add a transition
+
+    // Use setTimeout to hide the element after the transition completes
+    setTimeout(() => {
+        loadingOverlay.style.display = 'none';
+        loadingOverlay.style.transition = 'none'; // Remove the transition for subsequent shows
+    }, 500); //  Match the transition duration (0.5s)
+}
+
+function handleNavLinkClick(link, navLinksGroup) {
+    event.preventDefault();
+
+    navLinksGroup.forEach(link => link.classList.remove('active'));
+    contentSections.forEach(section => section.classList.remove('active'));
+
+    link.classList.add('active');
+
+    const targetSectionId = link.dataset.section;
+    const targetSection = document.getElementById(targetSectionId);
+
+    if (targetSection) {
+        targetSection.classList.add('active');
+
+        // Do not show loader for "home" section
+        if (targetSectionId !== 'home') {
+            // Show loading overlay only on the first click for each section (excluding "home")
+            if (!sectionClicked[targetSectionId]) {
+                showLoadingOverlay();
+                sectionClicked[targetSectionId] = true;
+
+                setTimeout(() => {
+                    hideLoadingOverlay();
+                }, 2500);
+            }  
         }
+    }
+}
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        handleNavLinkClick(this, navLinks);
     });
 });
 
-        
+navLinksMOB.forEach(link => {
+    link.addEventListener('click', function(event) {
+        handleNavLinkClick(this, navLinksMOB);
+    });
+});
+
+navLinksMOBILE.forEach(link => {
+    link.addEventListener('click', function(event) {
+        handleNavLinkClick(this, navLinksMOBILE); 
+    });
+});
+
+
+// Toggle Mobile Navigation
+menuToggleButton.addEventListener('click', () => {
+    navigationMOBILE.classList.toggle('closed');
+});
+
+</script>
+<script>
         function updateDate() {
         const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -3243,12 +4732,12 @@ navLinksMOBILE.forEach(link => {
         }
 
         // Event listeners for buttons
-        nextButton.addEventListener('click', function () {
+        nextButton.addEventListener('click', function () { 
             stopCarousel(); // Stop auto-sliding on manual click
             nextSlide();
             startCarousel(); // Restart auto-sliding
         });
-
+ 
         prevButton.addEventListener('click', function () {
             stopCarousel(); // Stop auto-sliding on manual click
             prevSlide();
@@ -3264,3 +4753,9 @@ navLinksMOBILE.forEach(link => {
     });
         
 </script> 
+
+<!-- /wp:html -->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->
